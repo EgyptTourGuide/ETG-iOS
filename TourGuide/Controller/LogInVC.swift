@@ -20,7 +20,7 @@ class LogInVC: UIViewController {
     }
     @IBOutlet weak var emailTF: UITextField! {
         didSet {
-            emailTF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(1)])
+            emailTF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var passwordView: UIView! {
@@ -30,7 +30,7 @@ class LogInVC: UIViewController {
     }
     @IBOutlet weak var passwordTF: UITextField! {
         didSet {
-            passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(1)])
+            passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var logInView: UIView! {
@@ -69,6 +69,12 @@ class LogInVC: UIViewController {
         present(signUpVC, animated: true, completion: nil)
     }
     
+    @IBAction func skipBtnPressed(_ sender: UIButton) {
+        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HomeVC") as! HomeVC
+        
+        homeVC.modalPresentationStyle = .fullScreen
+        present(homeVC, animated: true, completion: nil)
+    }
     
     //MARK: -Helper functions
 

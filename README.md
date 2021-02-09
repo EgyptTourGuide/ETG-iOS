@@ -1,6 +1,6 @@
-# What I have done
+## What I have done
 *  logIn, signUp screen design
 
 
-# What I'm working on 
+## What I'm working on 
 * Home screen

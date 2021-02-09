@@ -14,7 +14,14 @@
 		31740A1825C538DE0082B329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1625C538DE0082B329 /* Main.storyboard */; };
 		31740A1A25C538E40082B329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1925C538E40082B329 /* Assets.xcassets */; };
 		31740A1D25C538E40082B329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1B25C538E40082B329 /* LaunchScreen.storyboard */; };
+		31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505525D1427700449D86 /* RecomendedCVCell.swift */; };
+		31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */; };
+		31C8505A25D2E36E00449D86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505925D2E36E00449D86 /* Constants.swift */; };
+		31C8505C25D3172C00449D86 /* CityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505B25D3172C00449D86 /* CityVC.swift */; };
+		31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */; };
 		31EB123D25D05C9500D37148 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123C25D05C9500D37148 /* README.md */; };
+		31EB123F25D133F300D37148 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123E25D133F300D37148 /* Home.storyboard */; };
+		31EB124125D1379B00D37148 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB124025D1379B00D37148 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +34,14 @@
 		31740A1925C538E40082B329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31740A1C25C538E40082B329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31740A1E25C538E40082B329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31C8505525D1427700449D86 /* RecomendedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCVCell.swift; sourceTree = "<group>"; };
+		31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAdvenCVCell.swift; sourceTree = "<group>"; };
+		31C8505925D2E36E00449D86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		31C8505B25D3172C00449D86 /* CityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityVC.swift; sourceTree = "<group>"; };
+		31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPlacesCVCell.swift; sourceTree = "<group>"; };
 		31EB123C25D05C9500D37148 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		31EB123E25D133F300D37148 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		31EB124025D1379B00D37148 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +78,9 @@
 				31740A2925C552310082B329 /* Extensions */,
 				31740A2825C5522A0082B329 /* Helpers */,
 				31740A2725C552190082B329 /* AppDelegates */,
-				31740A2625C552100082B329 /* Controller */,
 				31740A2525C552070082B329 /* View */,
 				31740A2425C551F90082B329 /* Model */,
+				31740A2625C552100082B329 /* Controller */,
 				31740A1925C538E40082B329 /* Assets.xcassets */,
 				31740A1E25C538E40082B329 /* Info.plist */,
 			);
@@ -84,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				31740A2A25C552470082B329 /* Storyboard */,
+				31C8505525D1427700449D86 /* RecomendedCVCell.swift */,
+				31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */,
+				31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +110,8 @@
 			children = (
 				31740A1425C538DE0082B329 /* LogInVC.swift */,
 				314B7A4025CAB6F4008B909F /* SignUpVC.swift */,
+				31EB124025D1379B00D37148 /* HomeVC.swift */,
+				31C8505B25D3172C00449D86 /* CityVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,6 +128,7 @@
 		31740A2825C5522A0082B329 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				31C8505925D2E36E00449D86 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,8 +143,9 @@
 		31740A2A25C552470082B329 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				31740A1625C538DE0082B329 /* Main.storyboard */,
 				31740A1B25C538E40082B329 /* LaunchScreen.storyboard */,
+				31740A1625C538DE0082B329 /* Main.storyboard */,
+				31EB123E25D133F300D37148 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -188,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31740A1D25C538E40082B329 /* LaunchScreen.storyboard in Resources */,
+				31EB123F25D133F300D37148 /* Home.storyboard in Resources */,
 				31740A1A25C538E40082B329 /* Assets.xcassets in Resources */,
 				31EB123D25D05C9500D37148 /* README.md in Resources */,
 				31740A1825C538DE0082B329 /* Main.storyboard in Resources */,
@@ -201,10 +223,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
+				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
+				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
+				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
+				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
 				31740A1525C538DE0082B329 /* LogInVC.swift in Sources */,
 				31740A1125C538DE0082B329 /* AppDelegate.swift in Sources */,
 				31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */,
+				31C8505A25D2E36E00449D86 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

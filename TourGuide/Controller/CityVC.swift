@@ -94,11 +94,12 @@ class CityVC: UIViewController {
     //MARK: -Variables
     let PlaHoDelImagesArray = [#imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
     
+    
     //MARK: -View functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpNavBar()
     }
     
     //MARK: -IBActions
@@ -112,6 +113,20 @@ class CityVC: UIViewController {
     }
     
     //MARK: -Helper functions
+    
+    func setUpNavBar(){
+        //For title in navigation bar
+        self.navigationController?.view.backgroundColor = UIColor.white
+        self.navigationController?.view.tintColor = UIColor.white
+        self.navigationItem.title = "City"
+
+        //For back button in navigation bar
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    
 }
 
 
@@ -130,6 +145,16 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = citiesHDCollectionView.dequeueReusableCell(withReuseIdentifier: "CityPlacesCVCell", for: indexPath) as! CityPlacesCVCell
             cell.placHDImageView.image = PlaHoDelImagesArray[indexPath.row]
             return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
+        
+        //            cityVC.modalPresentationStyle = .fullScreen
+        //            self.present(cityVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+        
     }
     
 }

@@ -70,10 +70,16 @@ class LogInVC: UIViewController {
     }
     
     @IBAction func skipBtnPressed(_ sender: UIButton) {
-        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HomeVC") as! HomeVC
         
-        homeVC.modalPresentationStyle = .fullScreen
-        present(homeVC, animated: true, completion: nil)
+//        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HomeVC") as! HomeVC
+//
+//        homeVC.modalPresentationStyle = .fullScreen
+//        present(homeVC, animated: true, completion: nil)
+        
+        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
+
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        present(mainTabBarController, animated: true, completion: nil)
     }
     
     //MARK: -Helper functions

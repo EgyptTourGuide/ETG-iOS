@@ -651,6 +651,47 @@
             </objects>
             <point key="canvasLocation" x="1100" y="100"/>
         </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="frG-qU-1DB">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" id="iW5-YC-uX4" customClass="MainTabBarController" customModule="TourGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q87-uS-uhK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="p1T-dR-fX0" kind="relationship" relationship="viewControllers" id="6Y0-85-XpA"/>
+                        <segue destination="A8f-Oz-Jti" kind="relationship" relationship="viewControllers" id="T3P-zk-BQd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pzy-jy-QyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="100"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="SaA-hH-0wL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="p1T-dR-fX0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WTB-tj-fZr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygk-63-rHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="-107"/>
+        </scene>
+        <!--Planes-->
+        <scene sceneID="8BK-wW-EvT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Planes" id="A8f-Oz-Jti" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ehA-BD-fAM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6F7-ab-Tqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2653" y="23"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Google" width="20" height="20"/>

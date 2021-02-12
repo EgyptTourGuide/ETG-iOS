@@ -31,7 +31,7 @@ class HomeVC: UIViewController {
     
     //MARK: -Variables
     let recomendedImagesArray = [#imageLiteral(resourceName: "divingHomePhoto"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "divingHomePhoto"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "divingHomePhoto")]
-    var cityAdvenImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+    var cityAdvenImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
 
     //MARK: -View functions
     override func viewDidLoad() {
@@ -86,8 +86,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == cityAdvenCollectionView {
             let cityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "CityVC") as! CityVC
             
-            cityVC.modalPresentationStyle = .fullScreen
-            self.present(cityVC, animated: true, completion: nil)
+//            cityVC.modalPresentationStyle = .fullScreen
+//            self.present(cityVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(cityVC, animated: true)
         }
     }
 }

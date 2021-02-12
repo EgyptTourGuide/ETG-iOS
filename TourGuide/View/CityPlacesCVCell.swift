@@ -15,6 +15,7 @@ class CityPlacesCVCell: UICollectionViewCell {
             cellView.layer.cornerRadius = 10
         }
     }
+    
     @IBOutlet weak var placHDImageView: UIImageView! {
         didSet {
             placHDImageView.layer.cornerRadius = 10

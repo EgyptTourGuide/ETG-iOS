@@ -14,54 +14,54 @@ class CityVC: UIViewController {
     
     @IBOutlet weak var hotelDetailsView: UIView! {
         didSet {
-            hotelDetailsView.layer.cornerRadius = 20
+            hotelDetailsView.layer.cornerRadius = 15
         }
     }
     @IBOutlet weak var fromTF: UITextField! {
         didSet {
-            fromTF.layer.cornerRadius = 15
+            fromTF.layer.cornerRadius = fromTF.frame.height / 2
             fromTF.attributedPlaceholder = NSAttributedString(string: "From", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var toTF: UITextField! {
         didSet {
-            toTF.layer.cornerRadius = 15
+            toTF.layer.cornerRadius = toTF.frame.height / 2
             toTF.attributedPlaceholder = NSAttributedString(string: "To", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var adultsTF: UITextField! {
         didSet {
-            adultsTF.layer.cornerRadius = 15
+            adultsTF.layer.cornerRadius = adultsTF.frame.height / 2
             adultsTF.attributedPlaceholder = NSAttributedString(string: "Adults", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var childrenTF: UITextField! {
         didSet {
-            childrenTF.layer.cornerRadius = 15
+            childrenTF.layer.cornerRadius = childrenTF.frame.height / 2
             childrenTF.attributedPlaceholder = NSAttributedString(string: "Children", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var roomTF: UITextField! {
         didSet {
-            roomTF.layer.cornerRadius = 15
+            roomTF.layer.cornerRadius = roomTF.frame.height / 2
             roomTF.attributedPlaceholder = NSAttributedString(string: "Room", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var bedTF: UITextField! {
         didSet {
-            bedTF.layer.cornerRadius = 15
+            bedTF.layer.cornerRadius = bedTF.frame.height / 2
             bedTF.attributedPlaceholder = NSAttributedString(string: "Bed", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var mealsTF: UITextField! {
         didSet {
-            mealsTF.layer.cornerRadius = 15
+            mealsTF.layer.cornerRadius = mealsTF.frame.height / 2
             mealsTF.attributedPlaceholder = NSAttributedString(string: "Meals", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }
     @IBOutlet weak var featuresTF: UITextField! {
         didSet {
-            featuresTF.layer.cornerRadius = 15
+            featuresTF.layer.cornerRadius = featuresTF.frame.height / 2
             featuresTF.attributedPlaceholder = NSAttributedString(string: "Features", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(1)])
         }
     }

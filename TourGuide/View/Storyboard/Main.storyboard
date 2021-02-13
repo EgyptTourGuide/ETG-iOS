@@ -24,7 +24,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pyramidsLogIn" translatesAutoresizingMaskIntoConstraints="NO" id="mYe-5o-haE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle SignIn" translatesAutoresizingMaskIntoConstraints="NO" id="UVz-5a-8Qf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 1" translatesAutoresizingMaskIntoConstraints="NO" id="UVz-5a-8Qf">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIp-pU-tjy">
@@ -666,6 +666,7 @@
                     <connections>
                         <segue destination="p1T-dR-fX0" kind="relationship" relationship="viewControllers" id="6Y0-85-XpA"/>
                         <segue destination="A8f-Oz-Jti" kind="relationship" relationship="viewControllers" id="T3P-zk-BQd"/>
+                        <segue destination="2Ea-6P-iNy" kind="relationship" relationship="viewControllers" id="zOq-xq-2Ao"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzy-jy-QyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -690,13 +691,23 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6F7-ab-Tqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653" y="23"/>
+            <point key="canvasLocation" x="2651" y="3"/>
+        </scene>
+        <!--AddNewPlane-->
+        <scene sceneID="cI0-4m-mGe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddNewPlane" id="2Ea-6P-iNy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="T9U-wW-cWK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2K-WI-5ae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2683" y="144"/>
         </scene>
     </scenes>
     <resources>
         <image name="Google" width="20" height="20"/>
+        <image name="Rectangle 1" width="375" height="812"/>
         <image name="Rectangle 3" width="11" height="11"/>
-        <image name="Rectangle SignIn" width="375" height="812"/>
         <image name="Rectangle SignUp" width="375" height="812"/>
         <image name="logo" width="200" height="200"/>
         <image name="pyramidsLogIn" width="590" height="392"/>

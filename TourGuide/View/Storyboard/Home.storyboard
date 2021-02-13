@@ -1214,11 +1214,11 @@
             </objects>
             <point key="canvasLocation" x="6895.652173913044" y="-137.27678571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="6RJ-Wc-ON3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lsX-nn-Ht3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="eR8-4C-Lyq"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="eR8-4C-Lyq"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" backIndicatorImage="backBtnIcon" backIndicatorTransitionMaskImage="backBtnIcon" id="w4X-m4-oNA">

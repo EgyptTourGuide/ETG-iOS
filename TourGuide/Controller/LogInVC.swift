@@ -15,42 +15,44 @@ class LogInVC: UIViewController {
     @IBOutlet weak var rectangleImageView: UIImageView! 
     @IBOutlet weak var emailView: UIView! {
         didSet {
-            emailView.layer.cornerRadius = 15
+            emailView.layer.cornerRadius = emailView.frame.height / 2
         }
     }
     @IBOutlet weak var emailTF: UITextField! {
         didSet {
+            emailTF.layer.cornerRadius = emailTF.frame.height / 2
             emailTF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var passwordView: UIView! {
         didSet {
-            passwordView.layer.cornerRadius = 15
+            passwordView.layer.cornerRadius = passwordView.frame.height / 2
         }
     }
     @IBOutlet weak var passwordTF: UITextField! {
         didSet {
+            passwordTF.layer.cornerRadius = passwordTF.frame.height / 2
             passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var logInView: UIView! {
         didSet {
-            logInView.layer.cornerRadius = 15
+            logInView.layer.cornerRadius = logInView.frame.height / 2
         }
     }
     @IBOutlet weak var logInBtnOutlet: UIButton! {
         didSet {
-            logInBtnOutlet.layer.cornerRadius = 15
+            logInBtnOutlet.layer.cornerRadius = logInBtnOutlet.frame.height / 2
         }
     }
     @IBOutlet weak var googleView: UIView! {
         didSet {
-            googleView.layer.cornerRadius = 15
+            googleView.layer.cornerRadius = googleView.frame.height / 2
         }
     }
     @IBOutlet weak var googleLogInBtnOutlet: UIButton! {
     didSet {
-        googleLogInBtnOutlet.layer.cornerRadius = 15
+        googleLogInBtnOutlet.layer.cornerRadius = googleLogInBtnOutlet.frame.height / 2
     }
     }
     

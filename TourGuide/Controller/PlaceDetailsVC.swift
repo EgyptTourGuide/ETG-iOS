@@ -14,13 +14,13 @@ class PlaceDetailsVC: UIViewController {
     
     @IBOutlet weak var searchView: UIView! {
         didSet {
-            searchView.layer.cornerRadius = 20
+            searchView.layer.cornerRadius = searchView.frame.height / 2
         }
     }
     
     @IBOutlet weak var searchTf: UITextField! {
         didSet {
-            searchTf.layer.cornerRadius = 15
+            searchTf.layer.cornerRadius = searchTf.frame.height / 2
             searchTf.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }

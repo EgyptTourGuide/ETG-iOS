@@ -197,11 +197,11 @@
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="67.633928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Prorams-->
         <scene sceneID="ebA-zN-CvH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yAF-Te-w9G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="RZJ-vN-IXs"/>
+                    <tabBarItem key="tabBarItem" title="Prorams" image="list.bullet" catalog="system" id="RZJ-vN-IXs"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jWI-Bv-Oxk">

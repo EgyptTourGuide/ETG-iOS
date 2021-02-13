@@ -15,6 +15,7 @@
 		31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1225C538DE0082B329 /* SceneDelegate.swift */; };
 		31740A1525C538DE0082B329 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1425C538DE0082B329 /* LogInVC.swift */; };
 		31740A1A25C538E40082B329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1925C538E40082B329 /* Assets.xcassets */; };
+		318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7325D8865600015F7E /* AddNewProgramVC.swift */; };
 		31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505525D1427700449D86 /* RecomendedCVCell.swift */; };
 		31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */; };
 		31C8505A25D2E36E00449D86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505925D2E36E00449D86 /* Constants.swift */; };
@@ -41,6 +42,7 @@
 		31740A1425C538DE0082B329 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		31740A1925C538E40082B329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31740A1E25C538E40082B329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		318D8D7325D8865600015F7E /* AddNewProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProgramVC.swift; sourceTree = "<group>"; };
 		31C8505525D1427700449D86 /* RecomendedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCVCell.swift; sourceTree = "<group>"; };
 		31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAdvenCVCell.swift; sourceTree = "<group>"; };
 		31C8505925D2E36E00449D86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				312D51AC25D48E0D0086D672 /* MainTabBarController.swift */,
 				31D83ED225D4959500C170FB /* PlaceDetailsVC.swift */,
 				31EE839725D6E9DB0010D3AD /* PlanesVC.swift */,
+				318D8D7325D8865600015F7E /* AddNewProgramVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
+				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,

@@ -13,13 +13,13 @@ class HomeVC: UIViewController {
     //MARK: -IBOutlets
     @IBOutlet weak var searchTF: UITextField! {
         didSet {
-            searchTF.layer.cornerRadius = 15
+            searchTF.layer.cornerRadius = searchTF.frame.height / 2
             searchTF.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var searchView: UIView! {
         didSet {
-            searchView.layer.cornerRadius = 20
+            searchView.layer.cornerRadius = searchView.frame.height / 2
         }
     }
     @IBOutlet weak var recomndedCollectionView: UICollectionView!

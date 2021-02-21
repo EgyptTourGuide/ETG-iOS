@@ -85,6 +85,8 @@ class CityVC: UIViewController {
     }
     @IBOutlet weak var backBtnOutlet: UIButton!
     @IBOutlet weak var citiesHDCollectionView: UICollectionView!
+    @IBOutlet weak var chooseCollectionView: UICollectionView!
+    
     @IBOutlet weak var backgroundConnectionView: UIView! {
         didSet {
             backgroundConnectionView.layer.cornerRadius = 20
@@ -92,8 +94,8 @@ class CityVC: UIViewController {
     }
     
     //MARK: -Variables
-    let PlaHoDelImagesArray = [#imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
-    
+    var PlaHoDelImagesArray = [#imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
+    let labelsArray = ["Places", "Hotels","Delights"]
     
     //MARK: -View functions
     override func viewDidLoad() {
@@ -134,27 +136,49 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         
+        if collectionView == chooseCollectionView {
+            return labelsArray.count
+        } else {
             return PlaHoDelImagesArray.count
-        
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
+        if collectionView == chooseCollectionView {
+            
+            let cell1 = chooseCollectionView.dequeueReusableCell(withReuseIdentifier: "ChooseProFavCVCell", for: indexPath) as! ChooseProFavCVCell
+            cell1.cellLabel.text = labelsArray[indexPath.row]
+            
+            return cell1
+        } else {
+            
             let cell = citiesHDCollectionView.dequeueReusableCell(withReuseIdentifier: "CityPlacesCVCell", for: indexPath) as! CityPlacesCVCell
             cell.placHDImageView.image = PlaHoDelImagesArray[indexPath.row]
+            
             return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == citiesHDCollectionView {
+            let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
+            
+            self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+        }
         
-        let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
-        
-        //            cityVC.modalPresentationStyle = .fullScreen
-        //            self.present(cityVC, animated: true, completion: nil)
-        self.navigationController?.pushViewController(placeDetailsVC, animated: true)
-        
+        if collectionView == chooseCollectionView {
+            if indexPath.row == 0 {
+                PlaHoDelImagesArray = [#imageLiteral(resourceName: "pyramidsLogIn"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+                citiesHDCollectionView.reloadData()
+            } else if indexPath.row == 1 {
+                PlaHoDelImagesArray = [#imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4")]
+                citiesHDCollectionView.reloadData()
+            } else {
+                PlaHoDelImagesArray = [#imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "divingAdven")]
+                citiesHDCollectionView.reloadData()
+            }
+        }
     }
     
 }

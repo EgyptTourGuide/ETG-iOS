@@ -10,7 +10,7 @@
         <!--Log InVC-->
         <scene sceneID="sUt-Eu-YO9">
             <objects>
-                <viewController id="Agf-BX-T29" customClass="LogInVC" customModule="TourGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInVC" id="Agf-BX-T29" customClass="LogInVC" customModule="TourGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VCH-rg-nwS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,18 +130,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7eD-ir-SLi">
                                                 <rect key="frame" x="60" y="683" width="294" height="12"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-gm-EWA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="14.333333333333334" height="12"/>
-                                                        <state key="normal" image="Rectangle 3"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-BA-Etb">
-                                                        <rect key="frame" x="34.333333333333321" y="0.0" width="102.66666666666669" height="12"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kB-ub-wa2">
-                                                        <rect key="frame" x="157" y="0.0" width="137" height="12"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kB-ub-wa2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="294" height="12"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                         <state key="normal" title="Forget password?">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -667,6 +657,8 @@
                         <segue destination="p1T-dR-fX0" kind="relationship" relationship="viewControllers" id="6Y0-85-XpA"/>
                         <segue destination="A8f-Oz-Jti" kind="relationship" relationship="viewControllers" id="T3P-zk-BQd"/>
                         <segue destination="2Ea-6P-iNy" kind="relationship" relationship="viewControllers" id="zOq-xq-2Ao"/>
+                        <segue destination="V5m-9x-g2z" kind="relationship" relationship="viewControllers" id="s1W-1Z-zBK"/>
+                        <segue destination="7IY-xK-qgr" kind="relationship" relationship="viewControllers" id="gnz-1f-to8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzy-jy-QyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -681,7 +673,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygk-63-rHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="-107"/>
+            <point key="canvasLocation" x="2652" y="-95"/>
         </scene>
         <!--Planes-->
         <scene sceneID="8BK-wW-EvT">
@@ -691,7 +683,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6F7-ab-Tqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2651" y="3"/>
+            <point key="canvasLocation" x="2656" y="1"/>
         </scene>
         <!--AddNewPlane-->
         <scene sceneID="cI0-4m-mGe">
@@ -701,13 +693,32 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2K-WI-5ae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2683" y="144"/>
+            <point key="canvasLocation" x="2683" y="100"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="xZT-zH-cSV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notifications" id="V5m-9x-g2z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wBf-pb-FqH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ojs-OP-6Rb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2683" y="196"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Vnw-06-k6f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="7IY-xK-qgr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="O9F-1E-3F5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sx-UM-cQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655" y="286"/>
         </scene>
     </scenes>
     <resources>
         <image name="Google" width="20" height="20"/>
         <image name="Rectangle 1" width="375" height="812"/>
-        <image name="Rectangle 3" width="11" height="11"/>
         <image name="Rectangle SignUp" width="375" height="812"/>
         <image name="logo" width="200" height="200"/>
         <image name="pyramidsLogIn" width="590" height="392"/>

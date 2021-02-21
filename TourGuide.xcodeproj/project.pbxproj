@@ -16,6 +16,10 @@
 		31740A1525C538DE0082B329 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1425C538DE0082B329 /* LogInVC.swift */; };
 		31740A1A25C538E40082B329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1925C538E40082B329 /* Assets.xcassets */; };
 		318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7325D8865600015F7E /* AddNewProgramVC.swift */; };
+		318D8D7625D99BC500015F7E /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318D8D7525D99BC500015F7E /* Notifications.storyboard */; };
+		318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7725D99EFF00015F7E /* NotificationsVC.swift */; };
+		318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */; };
+		318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */; };
 		31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505525D1427700449D86 /* RecomendedCVCell.swift */; };
 		31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */; };
 		31C8505A25D2E36E00449D86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505925D2E36E00449D86 /* Constants.swift */; };
@@ -29,6 +33,9 @@
 		31EE839825D6E9DB0010D3AD /* PlanesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE839725D6E9DB0010D3AD /* PlanesVC.swift */; };
 		31EE839A25D6EACE0010D3AD /* PlansCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE839925D6EACE0010D3AD /* PlansCVCell.swift */; };
 		31EE839C25D6EDF40010D3AD /* AddNewPlane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EE839B25D6EDF30010D3AD /* AddNewPlane.storyboard */; };
+		31F654A725E2C108009F9AC8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F654A625E2C108009F9AC8 /* Profile.storyboard */; };
+		31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */; };
+		31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,10 @@
 		31740A1925C538E40082B329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31740A1E25C538E40082B329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		318D8D7325D8865600015F7E /* AddNewProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProgramVC.swift; sourceTree = "<group>"; };
+		318D8D7525D99BC500015F7E /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		318D8D7725D99EFF00015F7E /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTVCell.swift; sourceTree = "<group>"; };
+		318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProFavCVCell.swift; sourceTree = "<group>"; };
 		31C8505525D1427700449D86 /* RecomendedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCVCell.swift; sourceTree = "<group>"; };
 		31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAdvenCVCell.swift; sourceTree = "<group>"; };
 		31C8505925D2E36E00449D86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -56,6 +67,9 @@
 		31EE839725D6E9DB0010D3AD /* PlanesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanesVC.swift; sourceTree = "<group>"; };
 		31EE839925D6EACE0010D3AD /* PlansCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansCVCell.swift; sourceTree = "<group>"; };
 		31EE839B25D6EDF30010D3AD /* AddNewPlane.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewPlane.storyboard; sourceTree = "<group>"; };
+		31F654A625E2C108009F9AC8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,8 @@
 				31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */,
 				31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */,
 				31EE839925D6EACE0010D3AD /* PlansCVCell.swift */,
+				318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */,
+				318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +147,9 @@
 				31D83ED225D4959500C170FB /* PlaceDetailsVC.swift */,
 				31EE839725D6E9DB0010D3AD /* PlanesVC.swift */,
 				318D8D7325D8865600015F7E /* AddNewProgramVC.swift */,
+				318D8D7725D99EFF00015F7E /* NotificationsVC.swift */,
+				31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */,
+				31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +186,8 @@
 				31EB123E25D133F300D37148 /* Home.storyboard */,
 				31EE839525D6E0D40010D3AD /* Planes.storyboard */,
 				31EE839B25D6EDF30010D3AD /* AddNewPlane.storyboard */,
+				318D8D7525D99BC500015F7E /* Notifications.storyboard */,
+				31F654A625E2C108009F9AC8 /* Profile.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -230,10 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31EB123F25D133F300D37148 /* Home.storyboard in Resources */,
+				318D8D7625D99BC500015F7E /* Notifications.storyboard in Resources */,
 				31740A1A25C538E40082B329 /* Assets.xcassets in Resources */,
 				31EB123D25D05C9500D37148 /* README.md in Resources */,
 				31EE839625D6E0D40010D3AD /* Planes.storyboard in Resources */,
 				312D51AB25D357580086D672 /* LaunchScreen.storyboard in Resources */,
+				31F654A725E2C108009F9AC8 /* Profile.storyboard in Resources */,
 				31EE839C25D6EDF40010D3AD /* AddNewPlane.storyboard in Resources */,
 				312D51AA25D357580086D672 /* Main.storyboard in Resources */,
 			);
@@ -249,12 +272,17 @@
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
+				31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */,
+				318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */,
+				318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */,
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
+				31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */,
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
 				31D83ED325D4959500C170FB /* PlaceDetailsVC.swift in Sources */,
+				318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */,
 				31740A1525C538DE0082B329 /* LogInVC.swift in Sources */,
 				31740A1125C538DE0082B329 /* AppDelegate.swift in Sources */,
 				31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */,

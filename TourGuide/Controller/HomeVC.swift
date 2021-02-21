@@ -27,12 +27,16 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var citiesBtnOutlet: UIButton!
     @IBOutlet weak var adventuresBtnOutlet: UIButton!
+    @IBOutlet weak var chooseCityAdvCollectionView: UICollectionView!
     
     
     //MARK: -Variables
     let recomendedImagesArray = [#imageLiteral(resourceName: "divingHomePhoto"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "divingHomePhoto"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "divingHomePhoto")]
     var cityAdvenImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
-
+    let labelsArray = ["Cities", "Adventures"]
+    
+    
+    
     //MARK: -View functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +45,6 @@ class HomeVC: UIViewController {
     
 
     //MARK: -IBActions
-    @IBAction func citiesBtnPressed(_ sender: UIButton) {
-        cityAdvenImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
-        
-    }
-    
-    @IBAction func adventuresBtnPressed(_ sender: UIButton) {
-        sender.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cityAdvenImagesArray = [#imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "spaAdven")]
-    }
     
     
     //MARK: -Helper functions
@@ -72,23 +67,44 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == recomndedCollectionView {
+            
             let cell = recomndedCollectionView.dequeueReusableCell(withReuseIdentifier: "RecomendedCVCell", for: indexPath) as! RecomendedCVCell
             cell.recomndedImageView.image = recomendedImagesArray[indexPath.row]
             return cell
-        } else {
+            
+        } else if collectionView == cityAdvenCollectionView {
+            
             let cell = cityAdvenCollectionView.dequeueReusableCell(withReuseIdentifier: "CityAdvenCVCell", for: indexPath) as! CityAdvenCVCell
             cell.cityAdvenImageView.image = cityAdvenImagesArray[indexPath.row]
             return cell
+            
+        } else {
+            let cell1 = chooseCityAdvCollectionView.dequeueReusableCell(withReuseIdentifier: "ChooseProFavCVCell", for: indexPath) as! ChooseProFavCVCell
+            
+            cell1.cellLabel.text = labelsArray[indexPath.row]
+            return cell1
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityAdvenCollectionView {
-            let cityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "CityVC") as! CityVC
             
-//            cityVC.modalPresentationStyle = .fullScreen
-//            self.present(cityVC, animated: true, completion: nil)
+            let cityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "CityVC") as! CityVC
+          
             self.navigationController?.pushViewController(cityVC, animated: true)
         }
-    }
+        if collectionView == chooseCityAdvCollectionView {
+            
+            if indexPath.row == 0 {
+                
+                cityAdvenImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+                cityAdvenCollectionView.reloadData()
+            } else if indexPath.row == 1 {
+                
+                cityAdvenImagesArray = [#imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
+                cityAdvenCollectionView.reloadData()
+            }
+        }
+        }
+    
 }

@@ -145,6 +145,11 @@
                         <viewLayoutGuide key="safeArea" id="Rbf-gM-U5R"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="u6J-7i-nGR"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="en3-K0-OT3" id="t5v-zN-7pz"/>
+                        <outlet property="nameLabel" destination="Qc4-d0-oPh" id="1e6-Z3-ooV"/>
+                        <outlet property="phoneLabel" destination="Ta2-1A-xcv" id="CTw-8J-KXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dN6-as-efW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +186,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="ted-mG-O3V"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -205,7 +211,8 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEQ-zq-JjN">
                                                 <rect key="frame" x="0.0" y="27" width="374" height="25"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -229,7 +236,8 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mj-pb-Yyy">
                                                 <rect key="frame" x="0.0" y="27" width="374" height="25"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -253,7 +261,8 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-FU-Wp6">
                                                 <rect key="frame" x="0.0" y="27" width="374" height="25"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -277,7 +286,8 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlG-hq-yuR">
                                                 <rect key="frame" x="0.0" y="27" width="374" height="25"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -340,6 +350,9 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateInfoBtnPressed:" destination="gCH-tO-ugd" eventType="touchUpInside" id="o2V-N0-r6x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -373,6 +386,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Nv-q8-DIv"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmBtnOutlet" destination="3xj-FP-sjM" id="XEV-Va-iP2"/>
+                        <outlet property="confirmPasswordTF" destination="QlG-hq-yuR" id="rNO-qj-Z6Q"/>
+                        <outlet property="emailTF" destination="tEQ-zq-JjN" id="BTW-nT-UfQ"/>
+                        <outlet property="nameTF" destination="0Fl-1c-Hmk" id="e0d-Iq-CfR"/>
+                        <outlet property="passwordTF" destination="jfn-FU-Wp6" id="7h5-0f-OPg"/>
+                        <outlet property="phoneTF" destination="0mj-pb-Yyy" id="1gz-LG-Aus"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frj-Nm-hZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

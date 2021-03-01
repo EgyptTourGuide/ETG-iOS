@@ -8,19 +8,33 @@
 
 import UIKit
 
+protocol EditProfile {
+    
+    func editName(name: String)
+    func editEmail(email: String)
+    func editPhone(phone: String)
+    
+}
+
+
 class ProfileVC: UIViewController {
 
     //MARK: -IBOutlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     
     //MARK: -Variables
     
     
+    //MARK: -View Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
+    
     
 
     //MARK: -IBActions
@@ -37,6 +51,7 @@ class ProfileVC: UIViewController {
         
         let editProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(identifier: "EditProfileVC") as! EditProfileVC
         
+        editProfileVC.delegate = self
         self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
@@ -51,4 +66,25 @@ class ProfileVC: UIViewController {
         backButton.image = #imageLiteral(resourceName: "backBtnIcon")
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
+}
+
+
+extension ProfileVC: EditProfile {
+    
+    func editName(name: String) {
+        
+        self.nameLabel.text = name
+    }
+    
+    func editEmail(email: String) {
+        
+        self.emailLabel.text = email
+    }
+    
+    func editPhone(phone: String) {
+        
+        self.phoneLabel.text = phone
+    }
+    
+    
 }

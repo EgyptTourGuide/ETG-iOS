@@ -8,14 +8,43 @@
 
 import UIKit
 
+
 class EditProfileVC: UIViewController {
 
+    //MARK: -IBOutlets
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var phoneTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var confirmPasswordTF: UITextField!
+    @IBOutlet weak var confirmBtnOutlet: UIButton! {
+        didSet {
+            confirmBtnOutlet.layer.cornerRadius = confirmBtnOutlet.frame.height
+        }
+    }
+    
+    
+    
+    //MARK: -Variables
+    var delegate: EditProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    
+    //MARK: -IBActions
+    @IBAction func updateInfoBtnPressed(_ sender: UIButton) {
+        
+        let profileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(identifier: "ProfileVC") as! ProfileVC
+        
+        self.delegate?.editName(name: self.nameTF.text ?? "")
+        self.delegate?.editEmail(email: self.emailTF.text ?? "")
+        self.delegate?.editPhone(phone: self.phoneTF.text ?? "")
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     //MARK: -Helper Functions
@@ -31,4 +60,7 @@ class EditProfileVC: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
+    
 }
+
+

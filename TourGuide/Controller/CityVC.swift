@@ -161,7 +161,7 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == citiesHDCollectionView {
+        if collectionView == citiesHDCollectionView  {
             let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
             
             self.navigationController?.pushViewController(placeDetailsVC, animated: true)
@@ -174,6 +174,10 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
             } else if indexPath.row == 1 {
                 PlaHoDelImagesArray = [#imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4")]
                 citiesHDCollectionView.reloadData()
+                
+                let hotelVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HotelVC") as! HotelVC
+                
+                self.navigationController?.pushViewController(hotelVC, animated: true)
             } else {
                 PlaHoDelImagesArray = [#imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "divingAdven")]
                 citiesHDCollectionView.reloadData()

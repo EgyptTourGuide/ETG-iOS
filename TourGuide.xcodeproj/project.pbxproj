@@ -36,6 +36,9 @@
 		31F654A725E2C108009F9AC8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F654A625E2C108009F9AC8 /* Profile.storyboard */; };
 		31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */; };
 		31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */; };
+		31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */; };
+		31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AE25ED7D71009F9AC8 /* HotelVC.swift */; };
+		31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		31F654A625E2C108009F9AC8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTVCell.swift; sourceTree = "<group>"; };
+		31F654AE25ED7D71009F9AC8 /* HotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
+		31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,8 @@
 				31EE839925D6EACE0010D3AD /* PlansCVCell.swift */,
 				318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */,
 				318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */,
+				31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */,
+				31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 				318D8D7725D99EFF00015F7E /* NotificationsVC.swift */,
 				31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */,
 				31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */,
+				31F654AE25ED7D71009F9AC8 /* HotelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,12 +281,15 @@
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
+				31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */,
 				31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */,
+				31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */,
 				318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */,
 				318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */,
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
+				31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
 				31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */,
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,

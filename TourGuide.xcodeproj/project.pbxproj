@@ -11,6 +11,9 @@
 		312D51AB25D357580086D672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312D51A925D357580086D672 /* LaunchScreen.storyboard */; };
 		312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312D51AC25D48E0D0086D672 /* MainTabBarController.swift */; };
 		314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B7A4025CAB6F4008B909F /* SignUpVC.swift */; };
+		3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDEE260DFE4100A99314 /* ActivityVC.swift */; };
+		3172FDF1260E132200A99314 /* RoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDF0260E132200A99314 /* RoomVC.swift */; };
+		3172FDF3260E16AB00A99314 /* MainRoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */; };
 		31740A1125C538DE0082B329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1025C538DE0082B329 /* AppDelegate.swift */; };
 		31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1225C538DE0082B329 /* SceneDelegate.swift */; };
 		31740A1525C538DE0082B329 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1425C538DE0082B329 /* LogInVC.swift */; };
@@ -46,6 +49,9 @@
 		312D51A925D357580086D672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312D51AC25D48E0D0086D672 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		314B7A4025CAB6F4008B909F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		3172FDEE260DFE4100A99314 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		3172FDF0260E132200A99314 /* RoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVC.swift; sourceTree = "<group>"; };
+		3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoomCVCell.swift; sourceTree = "<group>"; };
 		31740A0D25C538DE0082B329 /* TourGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31740A1025C538DE0082B329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31740A1225C538DE0082B329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */,
 				31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */,
 				31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */,
+				3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +166,8 @@
 				31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */,
 				31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */,
 				31F654AE25ED7D71009F9AC8 /* HotelVC.swift */,
+				3172FDEE260DFE4100A99314 /* ActivityVC.swift */,
+				3172FDF0260E132200A99314 /* RoomVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */,
 				318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */,
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
+				3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
 				31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */,
@@ -295,12 +305,14 @@
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
 				31D83ED325D4959500C170FB /* PlaceDetailsVC.swift in Sources */,
 				318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */,
+				3172FDF3260E16AB00A99314 /* MainRoomCVCell.swift in Sources */,
 				31740A1525C538DE0082B329 /* LogInVC.swift in Sources */,
 				31740A1125C538DE0082B329 /* AppDelegate.swift in Sources */,
 				31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */,
 				31EE839825D6E9DB0010D3AD /* PlanesVC.swift in Sources */,
 				31C8505A25D2E36E00449D86 /* Constants.swift in Sources */,
 				31EE839A25D6EACE0010D3AD /* PlansCVCell.swift in Sources */,
+				3172FDF1260E132200A99314 /* RoomVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

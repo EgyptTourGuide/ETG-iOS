@@ -93,6 +93,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
           
             self.navigationController?.pushViewController(cityVC, animated: true)
         }
+        
         if collectionView == chooseCityAdvCollectionView {
             
             if indexPath.row == 0 {
@@ -104,7 +105,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 cityAdvenImagesArray = [#imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
                 cityAdvenCollectionView.reloadData()
             }
-        }
+        } 
         }
     
 }

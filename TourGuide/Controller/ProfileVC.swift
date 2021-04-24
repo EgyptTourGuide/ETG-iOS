@@ -73,18 +73,25 @@ extension ProfileVC: EditProfile {
     
     func editName(name: String) {
         
-        self.nameLabel.text = name
+        if !name.isEmpty {
+            self.nameLabel.text = name
+        }
     }
     
     func editEmail(email: String) {
         
-        self.emailLabel.text = email
+        if !email.isEmpty {
+            self.emailLabel.text = email
+            
+        }
     }
     
     func editPhone(phone: String) {
         
-        self.phoneLabel.text = phone
+        if !phone.isEmpty {
+            self.phoneLabel.text = phone
+        }
     }
-    
-    
 }
+    
+

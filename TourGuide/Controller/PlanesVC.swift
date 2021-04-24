@@ -18,7 +18,7 @@ class PlanesVC: UIViewController {
     
     
     //MARK: -Variables
-    var progFavImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+    var progFavImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "LuxorTample"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Alex")]
     let labelsArray = ["Programs", "Favorite"]
     
     //MARK: -View Functions

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PlaceDetailsVC: UIViewController {
 
@@ -50,18 +51,31 @@ class PlaceDetailsVC: UIViewController {
             commentsTableView.layer.cornerRadius = 10
         }
     }
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var desriptionLabel: UILabel!
+    @IBOutlet weak var placeImageView: UIImageView!
+    @IBOutlet weak var hourLabel: UILabel!
     
-    @IBOutlet weak var addCommentView: UIView! {
-        didSet {
-            addCommentView.isHidden = true
-            addCommentView.layer.cornerRadius = 10
-        }
-    }
-    
+    //MARK: -Variables
+    var placeId = ""
+    var questionsArr = [String]()
+    var daysArr = [String]()
+    var fromArr = [String]()
+    var toArr = [String]()
+    var hoursArr = [String]()
+    var commentsArr = [String]()
+    var reviewerNames = [String]()
+    var reviewerPictures = [String]()
+
+
+    //MARK: -View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpNavBar()
+        print(placeId)
+        get_placeDetails()
     }
     
 
@@ -69,12 +83,14 @@ class PlaceDetailsVC: UIViewController {
     //MARK: -IBActions
     @IBAction func addReviewBtnPressed(_ sender: UIButton) {
         
-        addCommentView.isHidden = false
+        let reviewVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ReviewVC") as! ReviewVC
+        
+        reviewVC.questionsArr = self.questionsArr
+        reviewVC.placeId = self.placeId
+        self.navigationController?.pushViewController(reviewVC, animated: true)
     }
     
-    @IBAction func addCommentBtnPRessed(_ sender: Any) {
-        addCommentView.isHidden = true
-    }
+   
     
     
     //MARK: -Helper Functions
@@ -82,13 +98,80 @@ class PlaceDetailsVC: UIViewController {
         //For title in navigation bar
         self.navigationController?.view.backgroundColor = UIColor.white
         self.navigationController?.view.tintColor = UIColor.white
-        self.navigationItem.title = "Place Details"
+        self.navigationItem.title = "Place"
 
         //For back button in navigation bar
         let backButton = UIBarButtonItem()
         backButton.title = ""
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
+    
+    func get_placeDetails() {
+
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/places/\(placeId)") else {return}
+
+        print(url)
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+
+            switch response.result {
+
+            case .success(_):
+
+                let repValue = response.value as? Dictionary<String,AnyObject>
+                let place = repValue!["place"] as? Dictionary<String,AnyObject>
+                let getPlaceDetails = GetPlaceDetails(place: place!)
+                //print("Place: \(place!)")
+                
+                self.placeLabel.text = getPlaceDetails.name
+                self.rateLabel.text = "\(getPlaceDetails.rate ?? 0)"
+                self.desriptionLabel.text = getPlaceDetails.description
+                self.placeImageView.image = getImage(from: getPlaceDetails.media![0])
+                
+                self.questionsArr = getPlaceDetails.questions!
+                //print(self.questionsArr)
+                
+                let hours = getPlaceDetails.hours
+                for hour in hours {
+                    
+                    self.daysArr.append(hour["day"] as! String)
+                    self.fromArr.append(hour["from"] as! String)
+                    self.toArr.append(hour["to"] as! String)
+                    
+                }
+                
+                for day in 0..<self.daysArr.count {
+                    self.hoursArr.append("\(self.daysArr[day]), from \(self.fromArr[day]) to \(self.toArr[day]) \n")
+                    
+                }
+                
+                //let the array of strings "hours" be one string
+                let joined = self.hoursArr.joined()
+                self.hourLabel.text = joined
+                //print(self.daysArr, self.fromArr, self.toArr)
+                //print(getPlaceDetails.hours)
+                
+                let reviews = getPlaceDetails.reviews
+                for review in reviews {
+                    
+                    self.commentsArr.append(review["comment"] as! String)
+                    print(review["user"] as Any)
+                    
+                    }
+                
+                self.commentsTableView.reloadData()
+                //print(getPlaceDetails.reviews)
+                
+            case .failure(_):
+
+                print(response.error?.localizedDescription ?? "Error: Failure")
+            }
+        }
+    }
+
+    
 }
 
 
@@ -96,13 +179,13 @@ extension PlaceDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return commentsArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = commentsTableView.dequeueReusableCell(withIdentifier: "CommentsTVCell", for: indexPath) as! CommentsTVCell
-        
+        cell.commentLabel.text = commentsArr[indexPath.row]
         return cell
     }
     

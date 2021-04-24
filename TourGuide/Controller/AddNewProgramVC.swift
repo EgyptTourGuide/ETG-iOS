@@ -98,4 +98,13 @@ class AddNewProgramVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: -IBActions
+    
+    @IBAction func addNewProgBtnPressed(_ sender: UIButton) {
+        
+        let programVC = UIStoryboard(name: "AddNewPlane", bundle: nil).instantiateViewController(identifier: "ProgramVC") as! ProgramVC
+        
+          self.navigationController?.pushViewController(programVC, animated: true)
+        
+    }
 }

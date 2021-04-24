@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CityVC: UIViewController {
 
@@ -93,15 +94,23 @@ class CityVC: UIViewController {
         }
     }
     
+    
     //MARK: -Variables
-    var PlaHoDelImagesArray = [#imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "spaAdven")]
+    var PlaHoDelImagesArray = [String]()
     let labelsArray = ["Places", "Hotels","Delights"]
+    var cityId = ""
+    var getPlaceArr = [GetPlace]()
+    var placeImagesArr = [String]()
+    var selectedPlaceId = ""
     
     //MARK: -View functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         setUpNavBar()
+        get_places()
+        self.citiesHDCollectionView.reloadData()
     }
     
     //MARK: -IBActions
@@ -110,7 +119,9 @@ class CityVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
     @IBAction func skipHotelDetailsBtnPressed(_ sender: UIButton) {
+        
         hotelDetailsView.isHidden = true
     }
     
@@ -128,6 +139,41 @@ class CityVC: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
+    func get_places() {
+        
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/places?city=\(cityId)") else {return}
+        
+        print(url)
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+        
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                
+                let repValue = response.value as? Dictionary<String,AnyObject>
+                let places = repValue!["places"] as? [Dictionary<String,AnyObject>]
+                //print("Places: \(places!)")
+                
+                for place in places! {
+                    
+                    let getPlace = GetPlace(places: place)
+                    self.getPlaceArr.append(getPlace)
+                    self.placeImagesArr.append(getPlace.media![0])
+                    //print(self.placeImagesArr)
+                }
+                
+                self.citiesHDCollectionView.reloadData()
+                
+            case .failure(_):
+                
+                print(response.error?.localizedDescription ?? "Eroor: Failure")
+            }
+        }
+    }
+
     
 }
 
@@ -137,26 +183,32 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == chooseCollectionView {
+            
             return labelsArray.count
         } else {
-            return PlaHoDelImagesArray.count
+            
+            return placeImagesArr.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == chooseCollectionView {
-            
-            let cell1 = chooseCollectionView.dequeueReusableCell(withReuseIdentifier: "ChooseProFavCVCell", for: indexPath) as! ChooseProFavCVCell
-            cell1.cellLabel.text = labelsArray[indexPath.row]
-            
-            return cell1
-        } else {
+        if collectionView == citiesHDCollectionView  {
             
             let cell = citiesHDCollectionView.dequeueReusableCell(withReuseIdentifier: "CityPlacesCVCell", for: indexPath) as! CityPlacesCVCell
-            cell.placHDImageView.image = PlaHoDelImagesArray[indexPath.row]
+            
+            cell.placeHDNameLabel.text = getPlaceArr[indexPath.row].name
+            cell.placHDImageView.image = getImage(from: placeImagesArr[indexPath.row])
             
             return cell
+            
+        } else {
+            
+            let cell = chooseCollectionView.dequeueReusableCell(withReuseIdentifier: "ChooseProFavCVCell", for: indexPath) as! ChooseProFavCVCell
+            cell.cellLabel.text = labelsArray[indexPath.row]
+            
+            return cell
+            
         }
     }
     
@@ -164,41 +216,20 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if collectionView == citiesHDCollectionView  {
             
-            if PlaHoDelImagesArray == [#imageLiteral(resourceName: "pyramidsLogIn"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")] {
+            let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
+
+            if let placeId = getPlaceArr[indexPath.row].id {
                 
-                let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
-                
-                self.navigationController?.pushViewController(placeDetailsVC, animated: true)
-                
-            } else if PlaHoDelImagesArray == [#imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4")] {
-                
-                let hotelVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HotelVC") as! HotelVC
-                
-                self.navigationController?.pushViewController(hotelVC, animated: true)
-                
-            } else {
-                
-                let activityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ActivityVC") as! ActivityVC
-                
-                self.navigationController?.pushViewController(activityVC, animated: true)
+                self.selectedPlaceId = placeId
+                print("selected \(selectedPlaceId)")
             }
+            
+            print(selectedPlaceId)
+            placeDetailsVC.placeId = selectedPlaceId
+            self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+                
         }
         
-        if collectionView == chooseCollectionView {
-            if indexPath.row == 0 {
-                
-                PlaHoDelImagesArray = [#imageLiteral(resourceName: "pyramidsLogIn"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
-                citiesHDCollectionView.reloadData()
-            } else if indexPath.row == 1 {
-                
-                PlaHoDelImagesArray = [#imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "hotel4")]
-                citiesHDCollectionView.reloadData()
-            } else {
-                
-                PlaHoDelImagesArray = [#imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "divingAdven")]
-                citiesHDCollectionView.reloadData()
-            }
-        }
     }
     
 }

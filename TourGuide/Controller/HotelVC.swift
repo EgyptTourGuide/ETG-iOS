@@ -27,12 +27,6 @@ class HotelVC: UIViewController {
         }
     }
     
-    @IBOutlet weak var addCommentView: UIView! {
-        didSet {
-            addCommentView.isHidden = true
-            addCommentView.layer.cornerRadius = 10
-        }
-    }
     
     @IBOutlet weak var addReviewBtnOutlet: UIButton! {
         didSet {
@@ -53,12 +47,8 @@ class HotelVC: UIViewController {
     //MARK: -IBActions
     @IBAction func addReviewBtnPressed(_ sender: UIButton) {
         
-        addCommentView.isHidden = false
     }
     
-    @IBAction func addCommentBtnPRessed(_ sender: Any) {
-        addCommentView.isHidden = true
-    }
     
     
     //MARK:- Helper Functions

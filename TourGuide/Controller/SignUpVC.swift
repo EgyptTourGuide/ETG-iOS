@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpVC: UIViewController {
     
@@ -17,10 +18,10 @@ class SignUpVC: UIViewController {
             nameTF.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
-    @IBOutlet weak var emailTF: UITextField! {
+    @IBOutlet weak var userNameTF: UITextField! {
         didSet {
-            emailTF.layer.cornerRadius = emailTF.frame.height / 2
-            emailTF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
+            userNameTF.layer.cornerRadius = userNameTF.frame.height / 2
+            userNameTF.attributedPlaceholder = NSAttributedString(string: "User name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var countryView: UIView! {
@@ -41,16 +42,17 @@ class SignUpVC: UIViewController {
             phoneTF.attributedPlaceholder = NSAttributedString(string: "Phone number", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
+    @IBOutlet weak var emailTF: UITextField! {
+        didSet {
+            emailTF.layer.cornerRadius = emailTF.frame.height / 2
+            emailTF.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
+        }
+    }
+   
     @IBOutlet weak var passwordTF: UITextField! {
         didSet {
             passwordTF.layer.cornerRadius = passwordTF.frame.height / 2
             passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
-        }
-    }
-    @IBOutlet weak var confirmPasswordTF: UITextField! {
-        didSet {
-            confirmPasswordTF.layer.cornerRadius = confirmPasswordTF.frame.height / 2
-            confirmPasswordTF.attributedPlaceholder = NSAttributedString(string: "Confirm password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)])
         }
     }
     @IBOutlet weak var registerBtnOutlet: UIButton! {
@@ -69,6 +71,15 @@ class SignUpVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var countryPicker: UIPickerView! {
+        didSet {
+            countryPicker.isHidden = true
+        }
+    }
+    
+    
+    //MARK: -Variables
+    let countryArr = ["Australia", "Canada", "China","Egypt","Iceland","Palastine","Syria","United States", "United Kingdom"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +96,79 @@ class SignUpVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func showHidePicker(_ sender: UIButton) {
+        
+        if  countryPicker.isHidden {
+            countryPicker.isHidden = false
+        }else {
+            countryPicker.isHidden = true
+        }
+    }
+    
+    @IBAction func registerBtnPressed(_ sender: UIButton) {
+        post_signuP()
+    }
     
     //MARK: -Helper functions
 
+    func post_signuP() {
+        
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/signup") else {return}
+        
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let AlamoHeader = HTTPHeaders(header)
+        
+        let params : [String : Any] = ["fullname":nameTF.text ?? "",
+                                       "username":userNameTF.text ?? "",
+                                       "email":emailTF.text ?? "",
+                                       "password":passwordTF.text ?? "",
+                                       "phone":phoneTF.text ?? "",
+                                       "country":countryTF.text ?? ""]
+        
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: AlamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                print(response.value ?? "")
+                
+                let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
+
+                mainTabBarController.modalPresentationStyle = .fullScreen
+                self.present(mainTabBarController, animated: true, completion: nil)
+                
+            case .failure(_):
+                print(response.error?.localizedDescription ?? "Error ")
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+extension SignUpVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+       
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryArr.count
+       }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryArr[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedCountry = countryArr[row]
+        countryTF.text = selectedCountry
+        
+        countryPicker.isHidden = true
+    }
+    
+    
 }

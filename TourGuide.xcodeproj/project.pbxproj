@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310DCE71262E17730045806B /* GetPlaceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DCE70262E17730045806B /* GetPlaceDetails.swift */; };
+		3113DEAE2619EDCF00C0CD4D /* GetCitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113DEAD2619EDCF00C0CD4D /* GetCitiesModel.swift */; };
+		3113DEB0261DD2B800C0CD4D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113DEAF261DD2B800C0CD4D /* HelperFunctions.swift */; };
+		3113DEB22621C01700C0CD4D /* GetPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113DEB12621C01700C0CD4D /* GetPlaceModel.swift */; };
+		3113DEB826273CB800C0CD4D /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113DEB726273CB800C0CD4D /* ReviewVC.swift */; };
 		312D51AA25D357580086D672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312D51A825D357580086D672 /* Main.storyboard */; };
 		312D51AB25D357580086D672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312D51A925D357580086D672 /* LaunchScreen.storyboard */; };
 		312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312D51AC25D48E0D0086D672 /* MainTabBarController.swift */; };
@@ -23,6 +28,8 @@
 		318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7725D99EFF00015F7E /* NotificationsVC.swift */; };
 		318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */; };
 		318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */; };
+		31C6F06C260F4BBF0096468B /* ProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6F06B260F4BBF0096468B /* ProgramVC.swift */; };
+		31C6F06E260F4D5A0096468B /* City_ProgramCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */; };
 		31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505525D1427700449D86 /* RecomendedCVCell.swift */; };
 		31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */; };
 		31C8505A25D2E36E00449D86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505925D2E36E00449D86 /* Constants.swift */; };
@@ -42,9 +49,16 @@
 		31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */; };
 		31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AE25ED7D71009F9AC8 /* HotelVC.swift */; };
 		31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */; };
+		8F8FDA0FB03904479CE41BB2 /* Pods_TourGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A03A6E563126D58F033664 /* Pods_TourGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E6D20DA0B7F240C2DC53C2A /* Pods-TourGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TourGuide.debug.xcconfig"; path = "Target Support Files/Pods-TourGuide/Pods-TourGuide.debug.xcconfig"; sourceTree = "<group>"; };
+		310DCE70262E17730045806B /* GetPlaceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceDetails.swift; sourceTree = "<group>"; };
+		3113DEAD2619EDCF00C0CD4D /* GetCitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesModel.swift; sourceTree = "<group>"; };
+		3113DEAF261DD2B800C0CD4D /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		3113DEB12621C01700C0CD4D /* GetPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceModel.swift; sourceTree = "<group>"; };
+		3113DEB726273CB800C0CD4D /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		312D51A825D357580086D672 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		312D51A925D357580086D672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312D51AC25D48E0D0086D672 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -63,6 +77,8 @@
 		318D8D7725D99EFF00015F7E /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTVCell.swift; sourceTree = "<group>"; };
 		318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProFavCVCell.swift; sourceTree = "<group>"; };
+		31C6F06B260F4BBF0096468B /* ProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramVC.swift; sourceTree = "<group>"; };
+		31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_ProgramCVCell.swift; sourceTree = "<group>"; };
 		31C8505525D1427700449D86 /* RecomendedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCVCell.swift; sourceTree = "<group>"; };
 		31C8505725D2DFC800449D86 /* CityAdvenCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAdvenCVCell.swift; sourceTree = "<group>"; };
 		31C8505925D2E36E00449D86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -82,6 +98,8 @@
 		31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTVCell.swift; sourceTree = "<group>"; };
 		31F654AE25ED7D71009F9AC8 /* HotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
 		31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCVCell.swift; sourceTree = "<group>"; };
+		F4A03A6E563126D58F033664 /* Pods_TourGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TourGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C4E0F71A40B024059383FE /* Pods-TourGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TourGuide.release.xcconfig"; path = "Target Support Files/Pods-TourGuide/Pods-TourGuide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8FDA0FB03904479CE41BB2 /* Pods_TourGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +120,8 @@
 				31EB123C25D05C9500D37148 /* README.md */,
 				31740A0F25C538DE0082B329 /* TourGuide */,
 				31740A0E25C538DE0082B329 /* Products */,
+				71446982D424C0B0069024D7 /* Pods */,
+				803430C981F92A6D14C94E51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +151,9 @@
 		31740A2425C551F90082B329 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3113DEAD2619EDCF00C0CD4D /* GetCitiesModel.swift */,
+				3113DEB12621C01700C0CD4D /* GetPlaceModel.swift */,
+				310DCE70262E17730045806B /* GetPlaceDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +171,7 @@
 				31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */,
 				31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */,
 				3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */,
+				31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +193,8 @@
 				31F654AE25ED7D71009F9AC8 /* HotelVC.swift */,
 				3172FDEE260DFE4100A99314 /* ActivityVC.swift */,
 				3172FDF0260E132200A99314 /* RoomVC.swift */,
+				31C6F06B260F4BBF0096468B /* ProgramVC.swift */,
+				3113DEB726273CB800C0CD4D /* ReviewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				31C8505925D2E36E00449D86 /* Constants.swift */,
+				3113DEAF261DD2B800C0CD4D /* HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -210,6 +238,23 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		71446982D424C0B0069024D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E6D20DA0B7F240C2DC53C2A /* Pods-TourGuide.debug.xcconfig */,
+				F8C4E0F71A40B024059383FE /* Pods-TourGuide.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		803430C981F92A6D14C94E51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4A03A6E563126D58F033664 /* Pods_TourGuide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31740A2125C538E40082B329 /* Build configuration list for PBXNativeTarget "TourGuide" */;
 			buildPhases = (
+				F775EDD9D5DD4F0FA0A54004 /* [CP] Check Pods Manifest.lock */,
 				31740A0925C538DE0082B329 /* Sources */,
 				31740A0A25C538DE0082B329 /* Frameworks */,
 				31740A0B25C538DE0082B329 /* Resources */,
+				AD86AB4FBB1F765DB4E9D951 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,6 +329,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD86AB4FBB1F765DB4E9D951 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TourGuide/Pods-TourGuide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TourGuide/Pods-TourGuide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TourGuide/Pods-TourGuide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F775EDD9D5DD4F0FA0A54004 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TourGuide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		31740A0925C538DE0082B329 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,20 +378,27 @@
 			files = (
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
+				31C6F06C260F4BBF0096468B /* ProgramVC.swift in Sources */,
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
 				31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */,
+				3113DEB0261DD2B800C0CD4D /* HelperFunctions.swift in Sources */,
 				31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */,
 				31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */,
 				318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */,
 				318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */,
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
+				310DCE71262E17730045806B /* GetPlaceDetails.swift in Sources */,
 				3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
+				31C6F06E260F4D5A0096468B /* City_ProgramCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
+				3113DEB22621C01700C0CD4D /* GetPlaceModel.swift in Sources */,
 				31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
 				31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */,
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
+				3113DEB826273CB800C0CD4D /* ReviewVC.swift in Sources */,
+				3113DEAE2619EDCF00C0CD4D /* GetCitiesModel.swift in Sources */,
 				31D83ED325D4959500C170FB /* PlaceDetailsVC.swift in Sources */,
 				318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */,
 				3172FDF3260E16AB00A99314 /* MainRoomCVCell.swift in Sources */,
@@ -435,6 +531,7 @@
 		};
 		31740A2225C538E40082B329 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6D20DA0B7F240C2DC53C2A /* Pods-TourGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +550,7 @@
 		};
 		31740A2325C538E40082B329 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8C4E0F71A40B024059383FE /* Pods-TourGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

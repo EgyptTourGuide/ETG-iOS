@@ -21,4 +21,7 @@ class CityPlacesCVCell: UICollectionViewCell {
             placHDImageView.layer.cornerRadius = 10
         }
     }
+    
+    @IBOutlet weak var placeHDNameLabel: UILabel!
+    
 }

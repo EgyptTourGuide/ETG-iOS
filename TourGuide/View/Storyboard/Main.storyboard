@@ -56,8 +56,8 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eg5-Mo-HLw">
                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-Xh-36g">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30.333333333333332" height="25"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-Xh-36g">
+                                                                <rect key="frame" x="0.0" y="0.0" width="59" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="25"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -159,6 +159,9 @@
                                                                 <state key="normal" title="Log In">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="logInBtnPressed:" destination="Agf-BX-T29" eventType="touchUpInside" id="QHk-yx-dSU"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -275,7 +278,6 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="emailTF" destination="WVu-hI-vvI" id="LhQ-nZ-hTg"/>
                         <outlet property="emailView" destination="6YL-Ku-4Jz" id="gtE-0j-s3K"/>
                         <outlet property="googleLogInBtnOutlet" destination="L5f-bI-AUh" id="iRg-ox-SPc"/>
                         <outlet property="googleView" destination="en2-9r-cso" id="9FQ-sJ-7Cw"/>
@@ -283,6 +285,7 @@
                         <outlet property="logInView" destination="UFa-es-pT7" id="Aqh-nh-wjX"/>
                         <outlet property="passwordTF" destination="uCh-WX-RRT" id="5Rj-pT-W4B"/>
                         <outlet property="passwordView" destination="qT0-x2-cX5" id="TEm-5A-LpH"/>
+                        <outlet property="userNameTF" destination="WVu-hI-vvI" id="Ooc-aQ-Bpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGa-Fa-5y5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -319,6 +322,9 @@
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="registerBtnPressed:" destination="mME-ZS-JWb" eventType="touchUpInside" id="CpC-Ec-icd"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqP-Im-CHH">
                                                         <rect key="frame" x="0.0" y="40" width="284" height="30"/>
@@ -420,7 +426,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SB9-XX-Y89">
                                                         <rect key="frame" x="0.0" y="57" width="284" height="52"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-zl-KJj">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-zl-KJj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -462,6 +468,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmT-Sk-NhX">
                                                                         <rect key="frame" x="255.33333333333329" y="5.0000000000000009" width="18.666666666666657" height="13.333333333333336"/>
                                                                         <state key="normal" image="shm"/>
+                                                                        <connections>
+                                                                            <action selector="showHidePicker:" destination="mME-ZS-JWb" eventType="touchUpInside" id="P0k-MP-CRk"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -508,7 +517,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9Lp-E3-h9o">
                                                         <rect key="frame" x="0.0" y="228" width="284" height="52"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txF-ci-cWZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txF-ci-cWZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -532,7 +541,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8qE-9H-Xxd">
                                                         <rect key="frame" x="0.0" y="285" width="284" height="52"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3k-wb-1ke">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3k-wb-1ke">
                                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -541,7 +550,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ol8-6D-zhD">
                                                                 <rect key="frame" x="0.0" y="27" width="284" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -576,6 +585,14 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBh-mH-bp4">
+                                                <rect key="frame" x="65" y="563" width="284" height="261"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="mME-ZS-JWb" id="XF2-GZ-DZl"/>
+                                                    <outlet property="delegate" destination="mME-ZS-JWb" id="aiV-sQ-XDw"/>
+                                                </connections>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -585,13 +602,16 @@
                                             <constraint firstItem="KOx-f2-GSp" firstAttribute="top" secondItem="zE1-Ge-WXn" secondAttribute="bottom" constant="10" id="9RF-xb-g86"/>
                                             <constraint firstItem="66D-gt-90s" firstAttribute="top" secondItem="Nrs-3s-6As" secondAttribute="bottom" constant="10" id="9ko-Ne-tTl"/>
                                             <constraint firstItem="66D-gt-90s" firstAttribute="leading" secondItem="945-5J-BxT" secondAttribute="leading" constant="65" id="Byy-hX-ahj"/>
+                                            <constraint firstItem="LBh-mH-bp4" firstAttribute="bottom" secondItem="LqP-Im-CHH" secondAttribute="bottom" id="Cle-4K-ydj"/>
                                             <constraint firstItem="zE1-Ge-WXn" firstAttribute="top" secondItem="66D-gt-90s" secondAttribute="bottom" constant="20" id="HAV-o7-h6b"/>
+                                            <constraint firstItem="LBh-mH-bp4" firstAttribute="trailing" secondItem="1SN-vJ-Vsz" secondAttribute="trailing" id="JRD-p0-Gel"/>
                                             <constraint firstItem="gAI-DG-VzF" firstAttribute="leading" secondItem="945-5J-BxT" secondAttribute="leading" id="Kx6-h7-NHw"/>
                                             <constraint firstAttribute="height" constant="896" id="St5-aQ-pYY"/>
                                             <constraint firstAttribute="bottom" secondItem="gAI-DG-VzF" secondAttribute="bottom" id="Tkb-RM-B6b"/>
                                             <constraint firstItem="PaW-AF-AHg" firstAttribute="centerX" secondItem="945-5J-BxT" secondAttribute="centerX" id="V0y-lq-SSq"/>
                                             <constraint firstItem="PaW-AF-AHg" firstAttribute="top" secondItem="945-5J-BxT" secondAttribute="top" constant="215" id="VEQ-lS-wtv"/>
                                             <constraint firstAttribute="trailing" secondItem="g37-l7-4wB" secondAttribute="trailing" id="WbD-dI-HJY"/>
+                                            <constraint firstItem="LBh-mH-bp4" firstAttribute="top" secondItem="1SN-vJ-Vsz" secondAttribute="bottom" id="Yh3-9Y-lKP"/>
                                             <constraint firstAttribute="bottom" secondItem="g37-l7-4wB" secondAttribute="bottom" id="ZsX-cg-lvh"/>
                                             <constraint firstItem="DfV-Yy-XhB" firstAttribute="top" secondItem="945-5J-BxT" secondAttribute="top" constant="70" id="bcl-Z3-Fdu"/>
                                             <constraint firstAttribute="trailing" secondItem="DfV-Yy-XhB" secondAttribute="trailing" constant="50" id="if0-wY-Flj"/>
@@ -602,6 +622,7 @@
                                             <constraint firstItem="g37-l7-4wB" firstAttribute="leading" secondItem="945-5J-BxT" secondAttribute="leading" id="oUA-AQ-Rgb"/>
                                             <constraint firstItem="gAI-DG-VzF" firstAttribute="top" secondItem="945-5J-BxT" secondAttribute="top" id="qkc-QV-CcE"/>
                                             <constraint firstAttribute="trailing" secondItem="gAI-DG-VzF" secondAttribute="trailing" id="tbR-2E-eWg"/>
+                                            <constraint firstItem="LBh-mH-bp4" firstAttribute="leading" secondItem="1SN-vJ-Vsz" secondAttribute="leading" id="tk6-qJ-YO5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -625,21 +646,22 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="confirmPasswordTF" destination="Ol8-6D-zhD" id="y3M-VL-v9e"/>
+                        <outlet property="countryPicker" destination="LBh-mH-bp4" id="Sto-6u-Hgo"/>
                         <outlet property="countryTF" destination="BDW-ns-lgX" id="s1T-6o-jqq"/>
                         <outlet property="countryView" destination="tKB-P1-Ah8" id="D2e-0v-58r"/>
-                        <outlet property="emailTF" destination="Uni-k7-y3b" id="In4-HR-qAO"/>
+                        <outlet property="emailTF" destination="VLj-QF-7K9" id="Sni-94-99z"/>
                         <outlet property="googleBtnOutlet" destination="jUh-7m-38d" id="r6i-re-Jdy"/>
                         <outlet property="googleView" destination="LqP-Im-CHH" id="hDc-kT-Fy3"/>
-                        <outlet property="nameTF" destination="0TJ-tm-Bnd" id="YhB-1O-BGO"/>
-                        <outlet property="passwordTF" destination="VLj-QF-7K9" id="4Mv-aE-xvx"/>
+                        <outlet property="nameTF" destination="0TJ-tm-Bnd" id="3YD-fO-56k"/>
+                        <outlet property="passwordTF" destination="Ol8-6D-zhD" id="ra0-qH-Drd"/>
                         <outlet property="phoneTF" destination="aCX-DS-cZX" id="e6N-hG-d3V"/>
                         <outlet property="registerBtnOutlet" destination="obu-RF-qQ9" id="HbS-dL-gWz"/>
+                        <outlet property="userNameTF" destination="Uni-k7-y3b" id="4yb-kF-ZNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJA-Sy-HOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="100"/>
+            <point key="canvasLocation" x="1098.5507246376812" y="99.776785714285708"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="frG-qU-1DB">

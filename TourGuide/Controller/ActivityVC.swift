@@ -28,7 +28,7 @@ class ActivityVC: UIViewController {
         }
     }
     //MARK: -Variables
-    var whereToDoImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+    var whereToDoImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "LuxorTample"), #imageLiteral(resourceName: "addNewPlaneImage"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "delight1"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "Alex")]
     
     
     //MARK: -View Functions

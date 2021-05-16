@@ -20,14 +20,18 @@ class RoomVC: UIViewController {
         }
     }
     
+    
     //MARK: -Variables
     let roomImagesArray = [#imageLiteral(resourceName: "room2"), #imageLiteral(resourceName: "mainRoom2"), #imageLiteral(resourceName: "mainRoom3"), #imageLiteral(resourceName: "mainRoom4")]
+    var getRoomArr = [GetRooms]()
+    
     
     //MARK: -View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpNavBar()
+        print(getRoomArr)
     }
     
 

@@ -70,10 +70,10 @@ extension PlanesVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == chooseCollectionView && indexPath.row == 1 {
-            progFavImagesArray = [#imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "airBallonAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "spaAdven"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+            progFavImagesArray = [#imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "pyramidsLogIn"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "divingAdven"), #imageLiteral(resourceName: "desertsafariAdven"), #imageLiteral(resourceName: "spaAdven"), #imageLiteral(resourceName: "luxorHotel"), #imageLiteral(resourceName: "Alex")]
             plansCollectionView.reloadData()
         } else {
-            progFavImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "Cairo"), #imageLiteral(resourceName: "Aswan"), #imageLiteral(resourceName: "Alex")]
+            progFavImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "hotel2"), #imageLiteral(resourceName: "divingHomePhoto"), #imageLiteral(resourceName: "Alex"), #imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "Alex")]
             plansCollectionView.reloadData()
         }
     }

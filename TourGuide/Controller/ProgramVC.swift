@@ -16,7 +16,7 @@ class ProgramVC: UIViewController {
     
     
     //MARK: -Variables
-    let cityImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "LuxorTample"), #imageLiteral(resourceName: "airBallon")]
+    let cityImagesArray = [#imageLiteral(resourceName: "luxor"), #imageLiteral(resourceName: "desertSafariHome"), #imageLiteral(resourceName: "LuxorTample"), #imageLiteral(resourceName: "desertSafariHome")]
     
     //MARK: -View Functions
     override func viewDidLoad() {

@@ -39,13 +39,16 @@ class HomeVC: UIViewController {
     var getCityArr = [GetCity]()
     var cityImagesArr = [String]()
     var selectedCityId = ""
-    
+    var getActiviyIdArr = [String]()
+    var getActiviyNamesArr = [String]()
+    var ActiviyImagesArr = [String]()
     
     //MARK: -View functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
         get_cities()
+        get_activities()
     }
     
 
@@ -87,6 +90,40 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    func get_activities() {
+        
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/activity") else {return}
+        
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+        
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                
+                let repValue = response.value as! [AnyObject]
+                //print(repValue)
+                
+                for activity in repValue {
+                    
+                    let getActivity = GetActivity(activity: activity as! Dictionary<String, Any>)
+                    self.getActiviyIdArr.append(getActivity.id!)
+                    self.getActiviyNamesArr.append(getActivity.name!)
+                    self.ActiviyImagesArr.append(getActivity.media![0])
+                    
+                }
+                                
+                self.cityAdvenCollectionView.reloadData()
+                
+            case .failure(_):
+                
+                print(response.error?.localizedDescription ?? "Error")
+            }
+        }
+    }
 }
 
 
@@ -102,7 +139,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return labelsArray.count
             
         } else {
-            return getCityArr.count
+            return cityAdvenImagesArray.count
             
         }
     }
@@ -119,9 +156,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
             let cell = cityAdvenCollectionView.dequeueReusableCell(withReuseIdentifier: "CityAdvenCVCell", for: indexPath) as! CityAdvenCVCell
             
-            cell.cityAdvenLabel.text = getCityArr[indexPath.row].name
-            cell.cityAdvenImageView.image = getImage(from: cityImagesArr[indexPath.row])
-           
+            if cityAdvenImagesArray == cityImagesArr {
+                
+                cell.cityAdvenLabel.text = getCityArr[indexPath.row].name
+                cell.cityAdvenImageView.image = getImage(from: cityImagesArr[indexPath.row])
+                
+            } else if cityAdvenImagesArray == ActiviyImagesArr {
+                
+                cell.cityAdvenLabel.text = getActiviyNamesArr[indexPath.row]
+                cell.cityAdvenImageView.image = getImage(from: ActiviyImagesArr[indexPath.row])
+            }
+            
             
             return cell
             
@@ -138,45 +183,45 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if collectionView == cityAdvenCollectionView {
             
-            let cityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "CityVC") as! CityVC
-            
-            if let cityId = getCityArr[indexPath.row].id {
+            if cityAdvenImagesArray == cityImagesArr {
+                let cityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "CityVC") as! CityVC
                 
-                self.selectedCityId = cityId
-                print("selected \(selectedCityId)")
+                if let cityId = getCityArr[indexPath.row].id {
+                    
+                    self.selectedCityId = cityId
+                    print("selected \(selectedCityId)")
+                }
+                
+                print(selectedCityId)
+                cityVC.cityId = selectedCityId
+                
+                self.navigationController?.pushViewController(cityVC, animated: true)
+                
+            } else if cityAdvenImagesArray == ActiviyImagesArr {
+                
+                let activityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ActivityVC") as! ActivityVC
+                
+                //                self.selsectedHotelId = getHotelIdArr[indexPath.row]
+                //
+                //                print(selsectedHotelId)
+                //                hotelVC.hotelId = selsectedHotelId
+                self.navigationController?.pushViewController(activityVC, animated: true)
             }
-            
-            print(selectedCityId)
-            cityVC.cityId = selectedCityId
-            
-            self.navigationController?.pushViewController(cityVC, animated: true)
-            
-//            if cityAdvenImagesArray == cityImagesArr {
-//
-//
-//
-//            }
-//            else {
-
-//                let activityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ActivityVC") as! ActivityVC
-//
-//                self.navigationController?.pushViewController(activityVC, animated: true)
-//            }
         }
         
-//        if collectionView == chooseCityAdvCollectionView {
-//
-//            if indexPath.row == 0 {
-//
-//                cityAdvenImagesArray = cityImagesArr
-//                cityAdvenCollectionView.reloadData()
-//
-//            } else if indexPath.row == 1 {
-//
-//                cityAdvenImagesArray = cityImagesArr
-//                cityAdvenCollectionView.reloadData()
-//            }
-//        }
+        if collectionView == chooseCityAdvCollectionView {
+
+            if indexPath.row == 0 {
+
+                cityAdvenImagesArray = cityImagesArr
+                cityAdvenCollectionView.reloadData()
+
+            } else if indexPath.row == 1 {
+
+                cityAdvenImagesArray = ActiviyImagesArr
+                cityAdvenCollectionView.reloadData()
+            }
+        }
         }
     
 }

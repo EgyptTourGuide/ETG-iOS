@@ -10,6 +10,7 @@ target 'TourGuide' do
         pod 'Alamofire'
         pod 'SwiftyJSON'
         pod 'Cosmos', '~> 23.0'
+        pod 'ImagePicker'
 
 
 end

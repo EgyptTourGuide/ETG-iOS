@@ -157,8 +157,10 @@ class PlaceDetailsVC: UIViewController {
                 for review in reviews {
                     
                     self.commentsArr.append(review["comment"] as! String)
-                    print(review["user"] as Any)
-                    
+                    //print(review["user"] as Any)
+                    let reviewer = review["user"] as! Dictionary<String,Any>
+                    self.reviewerNames.append(reviewer["name"] as! String)
+                    self.reviewerPictures.append(reviewer["picture"] as! String)
                     }
                 
                 self.commentsTableView.reloadData()
@@ -186,6 +188,8 @@ extension PlaceDetailsVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = commentsTableView.dequeueReusableCell(withIdentifier: "CommentsTVCell", for: indexPath) as! CommentsTVCell
         cell.commentLabel.text = commentsArr[indexPath.row]
+        cell.nameLabel.text = reviewerNames[indexPath.row]
+        cell.profileImage.image = getImage(from: reviewerPictures[indexPath.row])?.circleMasked
         return cell
     }
     

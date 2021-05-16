@@ -8,10 +8,14 @@
 
 import UIKit
 import Alamofire
+import ImagePicker
 
 class SignUpVC: UIViewController {
     
     //MARK: -IBOutlets
+    
+    @IBOutlet weak var userImageView: UIImageView! 
+    
     @IBOutlet weak var nameTF: UITextField! {
         didSet {
             nameTF.layer.cornerRadius = nameTF.frame.height / 2
@@ -81,10 +85,15 @@ class SignUpVC: UIViewController {
     //MARK: -Variables
     let countryArr = ["Australia", "Canada", "China","Egypt","Iceland","Palastine","Syria","United States", "United Kingdom"]
     
+    let imageTapped = UITapGestureRecognizer()
+    var profileImage: UIImage?
+    var imgData: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        setImageTap()
     }
     
     
@@ -109,6 +118,16 @@ class SignUpVC: UIViewController {
         post_signuP()
     }
     
+    @objc func imagePressed() {
+        
+        let imagePickerView = ImagePickerController()
+        imagePickerView.imageLimit = 1
+        imagePickerView.delegate = self
+        
+        self.present(imagePickerView, animated: true, completion: nil)
+    }
+    
+    
     //MARK: -Helper functions
 
     func post_signuP() {
@@ -119,11 +138,12 @@ class SignUpVC: UIViewController {
         let AlamoHeader = HTTPHeaders(header)
         
         let params : [String : Any] = ["fullname":nameTF.text ?? "",
-                                       "username":userNameTF.text ?? "",
-                                       "email":emailTF.text ?? "",
-                                       "password":passwordTF.text ?? "",
-                                       "phone":phoneTF.text ?? "",
-                                       "country":countryTF.text ?? ""]
+            "username":userNameTF.text ?? "",
+            "email":emailTF.text ?? "",
+            "password":passwordTF.text ?? "",
+            "avatar":imgData!,
+            "phone":phoneTF.text ?? "",
+            "country":countryTF.text ?? ""]
         
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: AlamoHeader).responseJSON { (response) in
             
@@ -143,7 +163,11 @@ class SignUpVC: UIViewController {
         }
     }
     
-    
+    func setImageTap() {
+     userImageView.isUserInteractionEnabled = true
+     userImageView.addGestureRecognizer(imageTapped)
+     imageTapped.addTarget(self, action: #selector(self.imagePressed))
+    }
     
 }
 
@@ -168,6 +192,32 @@ extension SignUpVC: UIPickerViewDelegate, UIPickerViewDataSource {
         countryTF.text = selectedCountry
         
         countryPicker.isHidden = true
+    }
+    
+    
+}
+
+extension SignUpVC: ImagePickerDelegate {
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
+        if images.count > 0 {
+            profileImage = images.first
+            userImageView.image = profileImage!.circleMasked
+            self.imgData = stringFromImage(image: profileImage!)
+
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        
+        dismiss(animated: true, completion: nil)
     }
     
     

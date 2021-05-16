@@ -121,10 +121,11 @@ class LogInVC: UIViewController {
             case .success(_):
                 
                 let responseJSON = JSON(response.value as Any)
-                //print(responseJSON)
+                print(responseJSON)
 
                 if responseJSON["id"].intValue != 0 {
-
+                    
+                    print(responseJSON["token"].stringValue)
                     let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
 
                     mainTabBarController.modalPresentationStyle = .fullScreen

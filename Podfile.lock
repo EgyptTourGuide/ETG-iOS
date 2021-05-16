@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.2.2)
   - Cosmos (23.0.0)
+  - ImagePicker (3.2.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Cosmos (~> 23.0)
+  - ImagePicker
   - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Cosmos
+    - ImagePicker
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  ImagePicker: 1d950bbb2422548ed58791b4ec7f42fe42920511
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 033e7cefd2b4ce5ed9c7509afb82d16384f2f2ab
+PODFILE CHECKSUM: fe4fda257d8f27150ae13b90955dd2e2a76c60a3
 
 COCOAPODS: 1.9.3

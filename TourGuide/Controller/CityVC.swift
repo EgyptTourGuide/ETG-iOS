@@ -101,7 +101,11 @@ class CityVC: UIViewController {
     var cityId = ""
     var getPlaceArr = [GetPlace]()
     var placeImagesArr = [String]()
+    var getHotelIdArr = [String]()
+    var getHotelNamesArr = [String]()
+    var hotelImagesArr = [String]()
     var selectedPlaceId = ""
+    var selsectedHotelId = ""
     
     //MARK: -View functions
     override func viewDidLoad() {
@@ -110,7 +114,7 @@ class CityVC: UIViewController {
         
         setUpNavBar()
         get_places()
-        self.citiesHDCollectionView.reloadData()
+        get_hotels()
     }
     
     //MARK: -IBActions
@@ -143,7 +147,7 @@ class CityVC: UIViewController {
         
         guard let url = URL(string: "https://egypttourguide.herokuapp.com/places?city=\(cityId)") else {return}
         
-        print(url)
+        //print(url)
         let header = ["Content-Type":"application/json; charset=utf-8"]
         let alamoHeader = HTTPHeaders(header)
         
@@ -174,6 +178,42 @@ class CityVC: UIViewController {
         }
     }
 
+    func get_hotels() {
+        
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/hotels?city=\(cityId)") else {return}
+        
+        //print(url)
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+        
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                
+                let repValue = response.value as! [AnyObject]
+
+                for hotel in repValue {
+
+                    let getHotel = GetHotels(hotels: hotel as! Dictionary<String, Any>)
+                    self.getHotelIdArr.append(getHotel.id!)
+                    self.getHotelNamesArr.append(getHotel.name!)
+//                    print("Ids: \(self.getHotelIdArr)")
+//                    print("Names: \(self.getHotelNamesArr)")
+                    self.hotelImagesArr.append(getHotel.media![0])
+                    //print(self.hotelImagesArr)
+                    //print(self.placeImagesArr)
+                }
+                
+                self.citiesHDCollectionView.reloadData()
+                
+            case .failure(_):
+                
+                print(response.error?.localizedDescription ?? "Eroor: Failure")
+            }
+        }
+    }
     
 }
 
@@ -187,7 +227,7 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return labelsArray.count
         } else {
             
-            return placeImagesArr.count
+            return PlaHoDelImagesArray.count
         }
     }
     
@@ -197,8 +237,16 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
             let cell = citiesHDCollectionView.dequeueReusableCell(withReuseIdentifier: "CityPlacesCVCell", for: indexPath) as! CityPlacesCVCell
             
-            cell.placeHDNameLabel.text = getPlaceArr[indexPath.row].name
-            cell.placHDImageView.image = getImage(from: placeImagesArr[indexPath.row])
+            if PlaHoDelImagesArray == placeImagesArr {
+                
+                cell.placeHDNameLabel.text = getPlaceArr[indexPath.row].name
+                cell.placHDImageView.image = getImage(from: placeImagesArr[indexPath.row])
+                
+            } else if PlaHoDelImagesArray == hotelImagesArr {
+                
+                cell.placeHDNameLabel.text = getHotelNamesArr[indexPath.row]
+                cell.placHDImageView.image = getImage(from: hotelImagesArr[indexPath.row])
+            }
             
             return cell
             
@@ -216,20 +264,45 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if collectionView == citiesHDCollectionView  {
             
-            let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
-
-            if let placeId = getPlaceArr[indexPath.row].id {
+            if PlaHoDelImagesArray == placeImagesArr {
+                let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
                 
-                self.selectedPlaceId = placeId
-                print("selected \(selectedPlaceId)")
+                if let placeId = getPlaceArr[indexPath.row].id {
+                    
+                    self.selectedPlaceId = placeId
+                    print("selected \(selectedPlaceId)")
+                }
+                
+                //print(selectedPlaceId)
+                placeDetailsVC.placeId = selectedPlaceId
+                self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+                
+            } else if PlaHoDelImagesArray == hotelImagesArr {
+                
+                let hotelVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HotelVC") as! HotelVC
+                
+                self.selsectedHotelId = getHotelIdArr[indexPath.row] 
+                
+                print(selsectedHotelId)
+                hotelVC.hotelId = selsectedHotelId
+                self.navigationController?.pushViewController(hotelVC, animated: true)
             }
-            
-            print(selectedPlaceId)
-            placeDetailsVC.placeId = selectedPlaceId
-            self.navigationController?.pushViewController(placeDetailsVC, animated: true)
-                
         }
         
+        
+        if collectionView == chooseCollectionView {
+            
+            if indexPath.row == 0 {
+                
+                PlaHoDelImagesArray = placeImagesArr
+                citiesHDCollectionView.reloadData()
+                
+            } else if indexPath.row == 1 {
+                
+                PlaHoDelImagesArray = hotelImagesArr
+                citiesHDCollectionView.reloadData()
+            }
+        }
     }
     
 }

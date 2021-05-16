@@ -22,6 +22,13 @@ class ReviewVC: UIViewController {
         }
     }
 
+    @IBOutlet var questionsLabelsCollection: [UILabel]! {
+        didSet {
+            for question in 0..<questionsLabelsCollection.count {
+                questionsLabelsCollection[question].text = questionsArr[question]
+            }
+        }
+    }
     
     
     
@@ -67,6 +74,7 @@ class ReviewVC: UIViewController {
 
         setUpNavBar()
         getCosmos()
+        
     }
 
     //MARK: -IBActions

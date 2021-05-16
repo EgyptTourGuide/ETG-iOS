@@ -18,4 +18,6 @@ class RoomCVCell: UICollectionViewCell {
         }
     }
     
+    @IBOutlet weak var numOfBedsLabel: UILabel!
+    @IBOutlet weak var nimOfMealsLabel: UILabel!
 }

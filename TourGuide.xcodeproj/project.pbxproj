@@ -36,6 +36,10 @@
 		31C8505C25D3172C00449D86 /* CityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505B25D3172C00449D86 /* CityVC.swift */; };
 		31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */; };
 		31D83ED325D4959500C170FB /* PlaceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D83ED225D4959500C170FB /* PlaceDetailsVC.swift */; };
+		31D8B0BB263AE00100A476FE /* GetHotelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0BA263AE00100A476FE /* GetHotelDetails.swift */; };
+		31D8B0BD263C1EFD00A476FE /* GetHotelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */; };
+		31D8B0BF26469DF100A476FE /* GetRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0BE26469DF100A476FE /* GetRoom.swift */; };
+		31D8B0C12646A56B00A476FE /* GetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0C02646A56B00A476FE /* GetActivity.swift */; };
 		31EB123D25D05C9500D37148 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123C25D05C9500D37148 /* README.md */; };
 		31EB123F25D133F300D37148 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123E25D133F300D37148 /* Home.storyboard */; };
 		31EB124125D1379B00D37148 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB124025D1379B00D37148 /* HomeVC.swift */; };
@@ -85,6 +89,10 @@
 		31C8505B25D3172C00449D86 /* CityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityVC.swift; sourceTree = "<group>"; };
 		31C8505D25D31A2100449D86 /* CityPlacesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPlacesCVCell.swift; sourceTree = "<group>"; };
 		31D83ED225D4959500C170FB /* PlaceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsVC.swift; sourceTree = "<group>"; };
+		31D8B0BA263AE00100A476FE /* GetHotelDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHotelDetails.swift; sourceTree = "<group>"; };
+		31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHotelsModel.swift; sourceTree = "<group>"; };
+		31D8B0BE26469DF100A476FE /* GetRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoom.swift; sourceTree = "<group>"; };
+		31D8B0C02646A56B00A476FE /* GetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActivity.swift; sourceTree = "<group>"; };
 		31EB123C25D05C9500D37148 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		31EB123E25D133F300D37148 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		31EB124025D1379B00D37148 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 				3113DEAD2619EDCF00C0CD4D /* GetCitiesModel.swift */,
 				3113DEB12621C01700C0CD4D /* GetPlaceModel.swift */,
 				310DCE70262E17730045806B /* GetPlaceDetails.swift */,
+				31D8B0BA263AE00100A476FE /* GetHotelDetails.swift */,
+				31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */,
+				31D8B0BE26469DF100A476FE /* GetRoom.swift */,
+				31D8B0C02646A56B00A476FE /* GetActivity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,10 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
+				31D8B0C12646A56B00A476FE /* GetActivity.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
 				31C6F06C260F4BBF0096468B /* ProgramVC.swift in Sources */,
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
 				31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */,
+				31D8B0BF26469DF100A476FE /* GetRoom.swift in Sources */,
 				3113DEB0261DD2B800C0CD4D /* HelperFunctions.swift in Sources */,
 				31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */,
 				31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */,
@@ -389,6 +403,7 @@
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
 				310DCE71262E17730045806B /* GetPlaceDetails.swift in Sources */,
 				3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */,
+				31D8B0BD263C1EFD00A476FE /* GetHotelsModel.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
 				31C6F06E260F4D5A0096468B /* City_ProgramCVCell.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
@@ -396,6 +411,7 @@
 				31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
 				31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */,
+				31D8B0BB263AE00100A476FE /* GetHotelDetails.swift in Sources */,
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
 				3113DEB826273CB800C0CD4D /* ReviewVC.swift in Sources */,
 				3113DEAE2619EDCF00C0CD4D /* GetCitiesModel.swift in Sources */,

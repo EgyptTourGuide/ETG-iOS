@@ -13,12 +13,14 @@ class GetActivity {
     let id: String?
     let name: String?
     let media: [String]?
+    let descreption: String?
     
     init(activity: Dictionary<String,Any>) {
         
         self.id = activity["id"] as? String
         self.name = activity["name"] as? String
         self.media = activity["media"] as? [String]
+        self.descreption = activity["description"] as? String
 
     }
     

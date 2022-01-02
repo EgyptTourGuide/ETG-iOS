@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Cosmos
 
 class HomeVC: UIViewController {
 
@@ -37,31 +38,64 @@ class HomeVC: UIViewController {
     var cityAdvenImagesArray = [String]()
     let labelsArray = ["Cities", "Adventures"]
     var getCityArr = [GetCity]()
+    var getPlaceArr = [GetPlace]()
+    var placesImagesArr = [String]()
     var cityImagesArr = [String]()
     var selectedCityId = ""
     var getActiviyIdArr = [String]()
     var getActiviyNamesArr = [String]()
     var ActiviyImagesArr = [String]()
-    
+    var APIToken = ""
+    var selectedPlaceId = ""
+    var selsectedActivityId = ""
+    var selectedActivityName = ""
+
     //MARK: -View functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
         get_cities()
         get_activities()
+        get_BestPlaces()
+        //postRefresh()
     }
     
 
     //MARK: -IBActions
     
     
-    //MARK: -Helper functions
+    //MARK: -API Calls
+    func postRefresh() {
+        
+        guard let url = URL(string: "https://egypttourguide.herokuapp.com/token") else {return}
+        
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let AlamoHeader = HTTPHeaders(header)
+        
+        let refrechToken = UserDefaults.standard.string(forKey: "refreshToken") ?? "There is no token"
+
+        let params : [String : Any] = ["refreshToken":refrechToken]
+        
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: AlamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                let responseJSON = JSON(response.value as Any)
+                self.APIToken = responseJSON["token"].stringValue
+                print("refresh \(self.APIToken)")
+            case .failure(_):
+                print(response.error?.localizedDescription ?? "Error ")
+            }
+        }
+        
+    }
 
     func get_cities() {
         
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/cities") else {return}
+        guard let url = URL(string: "\(offlineURL)/cities") else {return}
         
-        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let header = Constants().defaultHeader
         let alamoHeader = HTTPHeaders(header)
         
         AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
@@ -93,11 +127,11 @@ class HomeVC: UIViewController {
     
     func get_activities() {
         
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/activity") else {return}
+        guard let url = URL(string: "\(offlineURL)/activity") else {return}
         
         let header = ["Content-Type":"application/json; charset=utf-8"]
         let alamoHeader = HTTPHeaders(header)
-        
+        print("Activities \(alamoHeader)")
         AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
             
             switch response.result {
@@ -124,6 +158,43 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    func get_BestPlaces() {
+        
+        guard let url = URL(string: "\(offlineURL)/places?limit=3") else {return}
+        
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+        //print("Activities \(alamoHeader)")
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                
+                let repValue = response.value as? Dictionary<String,Any>
+                //print(repValue)
+                let places = repValue!["places"] as? [Dictionary<String,Any>]
+                
+                for place in places! {
+                    
+                    //print(place)
+                    let getPlace = GetPlace(places: place)
+                    self.getPlaceArr.append(getPlace)
+                    self.placesImagesArr.append(getPlace.media![0])
+                    print("\(getPlace.rate!)")
+                }
+                //print(self.getPlaceArr)
+                
+                self.recomndedCollectionView.reloadData()
+                
+            case .failure(_):
+                
+                print(response.error?.localizedDescription ?? "Error")
+            }
+        }
+    }
+    
 }
 
 
@@ -133,7 +204,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == recomndedCollectionView {
-            return recomendedImagesArray.count
+            return placesImagesArr.count
             
         } else if collectionView == chooseCityAdvCollectionView {
             return labelsArray.count
@@ -149,7 +220,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == recomndedCollectionView {
             
             let cell = recomndedCollectionView.dequeueReusableCell(withReuseIdentifier: "RecomendedCVCell", for: indexPath) as! RecomendedCVCell
-            cell.recomndedImageView.image = recomendedImagesArray[indexPath.row]
+            cell.nameLabel.text = getPlaceArr[indexPath.row].name
+            cell.recomndedImageView.image = getImage(from: placesImagesArr[indexPath.row])
+            cell.cosmosView.rating = getPlaceArr[indexPath.row].rate!
             return cell
             
         } else if collectionView == cityAdvenCollectionView {
@@ -189,10 +262,10 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 if let cityId = getCityArr[indexPath.row].id {
                     
                     self.selectedCityId = cityId
-                    print("selected \(selectedCityId)")
+                    //print("selected \(selectedCityId)")
                 }
                 
-                print(selectedCityId)
+                //print(selectedCityId)
                 cityVC.cityId = selectedCityId
                 
                 self.navigationController?.pushViewController(cityVC, animated: true)
@@ -201,27 +274,49 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 
                 let activityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ActivityVC") as! ActivityVC
                 
-                //                self.selsectedHotelId = getHotelIdArr[indexPath.row]
-                //
-                //                print(selsectedHotelId)
-                //                hotelVC.hotelId = selsectedHotelId
+                
+                self.selsectedActivityId = getActiviyIdArr[indexPath.row]
+                //print("selected \(selsectedActivityId)")
+                self.selectedActivityName = getActiviyNamesArr[indexPath.row]
+                
+                activityVC.activityId = selsectedActivityId
+                activityVC.activityName = selectedActivityName
                 self.navigationController?.pushViewController(activityVC, animated: true)
+                
             }
+        } else if collectionView == recomndedCollectionView {
+            
+            let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
+            
+            if let placeId = getPlaceArr[indexPath.row].id {
+                
+                self.selectedPlaceId = placeId
+                //print("selected \(selectedPlaceId)")
+            }
+            
+            //print(selectedPlaceId)
+            placeDetailsVC.placeId = selectedPlaceId
+            self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+            
         }
         
         if collectionView == chooseCityAdvCollectionView {
-
+            
+            cityAdvenImagesArray = cityImagesArr
+            cityAdvenCollectionView.reloadData()
+            
             if indexPath.row == 0 {
-
+                
                 cityAdvenImagesArray = cityImagesArr
                 cityAdvenCollectionView.reloadData()
-
+                
             } else if indexPath.row == 1 {
-
+                
                 cityAdvenImagesArray = ActiviyImagesArr
                 cityAdvenCollectionView.reloadData()
             }
+            
         }
-        }
+    }
     
 }

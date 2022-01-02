@@ -10,8 +10,16 @@ import UIKit
 
 class RoomCVCell: UICollectionViewCell {
     
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var roomImgeView: UIImageView!
+    @IBOutlet weak var cellView: UIView! {
+        didSet {
+            cellView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var roomImgeView: UIImageView! {
+        didSet {
+            roomImgeView.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var reserveBtnOutlet: UIButton! {
         didSet {
             reserveBtnOutlet.layer.cornerRadius = reserveBtnOutlet.frame.height / 2

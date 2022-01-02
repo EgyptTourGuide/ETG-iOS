@@ -23,4 +23,5 @@ class CityAdvenCVCell: UICollectionViewCell {
     @IBOutlet weak var likeBtnOutlet: UIButton!
     @IBOutlet weak var cityAdvenLabel: UILabel!
     @IBOutlet weak var locationBtnOutlet: UIButton!
+    @IBOutlet weak var botRectImageView: UIImageView!
 }

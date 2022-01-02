@@ -15,7 +15,12 @@
 		312D51AA25D357580086D672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312D51A825D357580086D672 /* Main.storyboard */; };
 		312D51AB25D357580086D672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312D51A925D357580086D672 /* LaunchScreen.storyboard */; };
 		312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312D51AC25D48E0D0086D672 /* MainTabBarController.swift */; };
+		312FB33D269BC878000486ED /* UserPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FB33C269BC878000486ED /* UserPlan.swift */; };
+		312FB33F269BC9D6000486ED /* UserPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FB33E269BC9D6000486ED /* UserPlanVC.swift */; };
+		312FB341269BCB56000486ED /* RoomPlanCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FB340269BCB56000486ED /* RoomPlanCVCell.swift */; };
 		314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B7A4025CAB6F4008B909F /* SignUpVC.swift */; };
+		315029D6265E9F66004B3C7E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315029D5265E9F66004B3C7E /* ProfileVC.swift */; };
+		315029D82661668E004B3C7E /* GetFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315029D72661668E004B3C7E /* GetFavorites.swift */; };
 		3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDEE260DFE4100A99314 /* ActivityVC.swift */; };
 		3172FDF1260E132200A99314 /* RoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDF0260E132200A99314 /* RoomVC.swift */; };
 		3172FDF3260E16AB00A99314 /* MainRoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */; };
@@ -23,11 +28,17 @@
 		31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1225C538DE0082B329 /* SceneDelegate.swift */; };
 		31740A1525C538DE0082B329 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740A1425C538DE0082B329 /* LogInVC.swift */; };
 		31740A1A25C538E40082B329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31740A1925C538E40082B329 /* Assets.xcassets */; };
+		3189CBF62687A69300304B7A /* FeaturesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189CBF52687A69300304B7A /* FeaturesCVCell.swift */; };
+		3189CBF82688B55000304B7A /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189CBF72688B55000304B7A /* DroppablePin.swift */; };
 		318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7325D8865600015F7E /* AddNewProgramVC.swift */; };
 		318D8D7625D99BC500015F7E /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318D8D7525D99BC500015F7E /* Notifications.storyboard */; };
 		318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7725D99EFF00015F7E /* NotificationsVC.swift */; };
 		318D8D7A25D99F2500015F7E /* NotificationsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */; };
 		318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */; };
+		319111FC2699726F00C9871C /* TourCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319111FB2699726F00C9871C /* TourCVCell.swift */; };
+		3197B35F26974FF700DD317D /* getPlansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197B35E26974FF700DD317D /* getPlansModel.swift */; };
+		31A5C1CE266D6CAB00CD8F4A /* GetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C1CD266D6CAB00CD8F4A /* GetNotification.swift */; };
+		31C67F46269B667C00822C7E /* ConfirmDeclinePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C67F45269B667C00822C7E /* ConfirmDeclinePlanVC.swift */; };
 		31C6F06C260F4BBF0096468B /* ProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6F06B260F4BBF0096468B /* ProgramVC.swift */; };
 		31C6F06E260F4D5A0096468B /* City_ProgramCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */; };
 		31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8505525D1427700449D86 /* RecomendedCVCell.swift */; };
@@ -40,6 +51,11 @@
 		31D8B0BD263C1EFD00A476FE /* GetHotelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */; };
 		31D8B0BF26469DF100A476FE /* GetRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0BE26469DF100A476FE /* GetRoom.swift */; };
 		31D8B0C12646A56B00A476FE /* GetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B0C02646A56B00A476FE /* GetActivity.swift */; };
+		31D8B11526580C0100A476FE /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B11426580C0100A476FE /* APIHandler.swift */; };
+		31D8B11726580C3800A476FE /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B11626580C3800A476FE /* CustomInterceptor.swift */; };
+		31D8B11B265E3F7300A476FE /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8B11A265E3F7300A476FE /* Extenstions.swift */; };
+		31E5261E26985006006E549C /* AllPlansVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5261D26985006006E549C /* AllPlansVC.swift */; };
+		31E52620269850FC006E549C /* AllPlansCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5261F269850FC006E549C /* AllPlansCVCell.swift */; };
 		31EB123D25D05C9500D37148 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123C25D05C9500D37148 /* README.md */; };
 		31EB123F25D133F300D37148 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EB123E25D133F300D37148 /* Home.storyboard */; };
 		31EB124125D1379B00D37148 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB124025D1379B00D37148 /* HomeVC.swift */; };
@@ -47,9 +63,13 @@
 		31EE839825D6E9DB0010D3AD /* PlanesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE839725D6E9DB0010D3AD /* PlanesVC.swift */; };
 		31EE839A25D6EACE0010D3AD /* PlansCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE839925D6EACE0010D3AD /* PlansCVCell.swift */; };
 		31EE839C25D6EDF40010D3AD /* AddNewPlane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EE839B25D6EDF30010D3AD /* AddNewPlane.storyboard */; };
+		31EFF276269CADAA00193BD9 /* PlanDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFF275269CADAA00193BD9 /* PlanDetailsVC.swift */; };
+		31EFF278269CE35900193BD9 /* PlanRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFF277269CE35900193BD9 /* PlanRoomVC.swift */; };
+		31F56083269CA34400291DA7 /* UserPlanCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F56082269CA34400291DA7 /* UserPlanCVCell.swift */; };
+		31F56085269CA36E00291DA7 /* UserHotelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F56084269CA36E00291DA7 /* UserHotelCVCell.swift */; };
+		31F56087269CA3AF00291DA7 /* UserPlanHotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F56086269CA3AF00291DA7 /* UserPlanHotelVC.swift */; };
 		31F654A725E2C108009F9AC8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F654A625E2C108009F9AC8 /* Profile.storyboard */; };
-		31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */; };
-		31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */; };
+		31F654AB25E3009F009F9AC8 /* EditProfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AA25E3009F009F9AC8 /* EditProfVC.swift */; };
 		31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */; };
 		31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654AE25ED7D71009F9AC8 /* HotelVC.swift */; };
 		31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */; };
@@ -66,7 +86,12 @@
 		312D51A825D357580086D672 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		312D51A925D357580086D672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312D51AC25D48E0D0086D672 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		312FB33C269BC878000486ED /* UserPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlan.swift; sourceTree = "<group>"; };
+		312FB33E269BC9D6000486ED /* UserPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlanVC.swift; sourceTree = "<group>"; };
+		312FB340269BCB56000486ED /* RoomPlanCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanCVCell.swift; sourceTree = "<group>"; };
 		314B7A4025CAB6F4008B909F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		315029D5265E9F66004B3C7E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		315029D72661668E004B3C7E /* GetFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavorites.swift; sourceTree = "<group>"; };
 		3172FDEE260DFE4100A99314 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		3172FDF0260E132200A99314 /* RoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVC.swift; sourceTree = "<group>"; };
 		3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoomCVCell.swift; sourceTree = "<group>"; };
@@ -76,11 +101,17 @@
 		31740A1425C538DE0082B329 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		31740A1925C538E40082B329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31740A1E25C538E40082B329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3189CBF52687A69300304B7A /* FeaturesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesCVCell.swift; sourceTree = "<group>"; };
+		3189CBF72688B55000304B7A /* DroppablePin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		318D8D7325D8865600015F7E /* AddNewProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProgramVC.swift; sourceTree = "<group>"; };
 		318D8D7525D99BC500015F7E /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		318D8D7725D99EFF00015F7E /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		318D8D7925D99F2500015F7E /* NotificationsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTVCell.swift; sourceTree = "<group>"; };
 		318D8DA225DB256A00015F7E /* ChooseProFavCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProFavCVCell.swift; sourceTree = "<group>"; };
+		319111FB2699726F00C9871C /* TourCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCVCell.swift; sourceTree = "<group>"; };
+		3197B35E26974FF700DD317D /* getPlansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPlansModel.swift; sourceTree = "<group>"; };
+		31A5C1CD266D6CAB00CD8F4A /* GetNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotification.swift; sourceTree = "<group>"; };
+		31C67F45269B667C00822C7E /* ConfirmDeclinePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeclinePlanVC.swift; sourceTree = "<group>"; };
 		31C6F06B260F4BBF0096468B /* ProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramVC.swift; sourceTree = "<group>"; };
 		31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_ProgramCVCell.swift; sourceTree = "<group>"; };
 		31C8505525D1427700449D86 /* RecomendedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedCVCell.swift; sourceTree = "<group>"; };
@@ -93,6 +124,11 @@
 		31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHotelsModel.swift; sourceTree = "<group>"; };
 		31D8B0BE26469DF100A476FE /* GetRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoom.swift; sourceTree = "<group>"; };
 		31D8B0C02646A56B00A476FE /* GetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActivity.swift; sourceTree = "<group>"; };
+		31D8B11426580C0100A476FE /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		31D8B11626580C3800A476FE /* CustomInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
+		31D8B11A265E3F7300A476FE /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		31E5261D26985006006E549C /* AllPlansVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlansVC.swift; sourceTree = "<group>"; };
+		31E5261F269850FC006E549C /* AllPlansCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlansCVCell.swift; sourceTree = "<group>"; };
 		31EB123C25D05C9500D37148 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		31EB123E25D133F300D37148 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		31EB124025D1379B00D37148 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -100,9 +136,13 @@
 		31EE839725D6E9DB0010D3AD /* PlanesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanesVC.swift; sourceTree = "<group>"; };
 		31EE839925D6EACE0010D3AD /* PlansCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansCVCell.swift; sourceTree = "<group>"; };
 		31EE839B25D6EDF30010D3AD /* AddNewPlane.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewPlane.storyboard; sourceTree = "<group>"; };
+		31EFF275269CADAA00193BD9 /* PlanDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsVC.swift; sourceTree = "<group>"; };
+		31EFF277269CE35900193BD9 /* PlanRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRoomVC.swift; sourceTree = "<group>"; };
+		31F56082269CA34400291DA7 /* UserPlanCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlanCVCell.swift; sourceTree = "<group>"; };
+		31F56084269CA36E00291DA7 /* UserHotelCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHotelCVCell.swift; sourceTree = "<group>"; };
+		31F56086269CA3AF00291DA7 /* UserPlanHotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlanHotelVC.swift; sourceTree = "<group>"; };
 		31F654A625E2C108009F9AC8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		31F654AA25E3009F009F9AC8 /* EditProfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfVC.swift; sourceTree = "<group>"; };
 		31F654AC25EA8439009F9AC8 /* CommentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTVCell.swift; sourceTree = "<group>"; };
 		31F654AE25ED7D71009F9AC8 /* HotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
 		31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCVCell.swift; sourceTree = "<group>"; };
@@ -165,7 +205,11 @@
 				31D8B0BA263AE00100A476FE /* GetHotelDetails.swift */,
 				31D8B0BC263C1EFD00A476FE /* GetHotelsModel.swift */,
 				31D8B0BE26469DF100A476FE /* GetRoom.swift */,
+				315029D72661668E004B3C7E /* GetFavorites.swift */,
+				31A5C1CD266D6CAB00CD8F4A /* GetNotification.swift */,
 				31D8B0C02646A56B00A476FE /* GetActivity.swift */,
+				3197B35E26974FF700DD317D /* getPlansModel.swift */,
+				312FB33C269BC878000486ED /* UserPlan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +228,13 @@
 				31F654B025ED82DB009F9AC8 /* RoomCVCell.swift */,
 				3172FDF2260E16AB00A99314 /* MainRoomCVCell.swift */,
 				31C6F06D260F4D5A0096468B /* City_ProgramCVCell.swift */,
+				3189CBF52687A69300304B7A /* FeaturesCVCell.swift */,
+				3189CBF72688B55000304B7A /* DroppablePin.swift */,
+				31E5261F269850FC006E549C /* AllPlansCVCell.swift */,
+				319111FB2699726F00C9871C /* TourCVCell.swift */,
+				312FB340269BCB56000486ED /* RoomPlanCVCell.swift */,
+				31F56082269CA34400291DA7 /* UserPlanCVCell.swift */,
+				31F56084269CA36E00291DA7 /* UserHotelCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,15 +249,21 @@
 				312D51AC25D48E0D0086D672 /* MainTabBarController.swift */,
 				31D83ED225D4959500C170FB /* PlaceDetailsVC.swift */,
 				31EE839725D6E9DB0010D3AD /* PlanesVC.swift */,
+				31E5261D26985006006E549C /* AllPlansVC.swift */,
+				31F654AE25ED7D71009F9AC8 /* HotelVC.swift */,
 				318D8D7325D8865600015F7E /* AddNewProgramVC.swift */,
 				318D8D7725D99EFF00015F7E /* NotificationsVC.swift */,
-				31F654A825E2D8CE009F9AC8 /* ProfileVC.swift */,
-				31F654AA25E3009F009F9AC8 /* EditProfileVC.swift */,
-				31F654AE25ED7D71009F9AC8 /* HotelVC.swift */,
+				315029D5265E9F66004B3C7E /* ProfileVC.swift */,
+				31F654AA25E3009F009F9AC8 /* EditProfVC.swift */,
 				3172FDEE260DFE4100A99314 /* ActivityVC.swift */,
 				3172FDF0260E132200A99314 /* RoomVC.swift */,
 				31C6F06B260F4BBF0096468B /* ProgramVC.swift */,
+				31C67F45269B667C00822C7E /* ConfirmDeclinePlanVC.swift */,
 				3113DEB726273CB800C0CD4D /* ReviewVC.swift */,
+				312FB33E269BC9D6000486ED /* UserPlanVC.swift */,
+				31F56086269CA3AF00291DA7 /* UserPlanHotelVC.swift */,
+				31EFF275269CADAA00193BD9 /* PlanDetailsVC.swift */,
+				31EFF277269CE35900193BD9 /* PlanRoomVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +282,8 @@
 			children = (
 				31C8505925D2E36E00449D86 /* Constants.swift */,
 				3113DEAF261DD2B800C0CD4D /* HelperFunctions.swift */,
+				31D8B11426580C0100A476FE /* APIHandler.swift */,
+				31D8B11626580C3800A476FE /* CustomInterceptor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -232,6 +291,7 @@
 		31740A2925C552310082B329 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				31D8B11A265E3F7300A476FE /* Extenstions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +448,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				312FB33F269BC9D6000486ED /* UserPlanVC.swift in Sources */,
+				31F56083269CA34400291DA7 /* UserPlanCVCell.swift in Sources */,
 				31C8505625D1427700449D86 /* RecomendedCVCell.swift in Sources */,
 				31D8B0C12646A56B00A476FE /* GetActivity.swift in Sources */,
 				314B7A4125CAB6F5008B909F /* SignUpVC.swift in Sources */,
@@ -395,24 +457,38 @@
 				312D51AD25D48E0D0086D672 /* MainTabBarController.swift in Sources */,
 				31F654AD25EA843A009F9AC8 /* CommentsTVCell.swift in Sources */,
 				31D8B0BF26469DF100A476FE /* GetRoom.swift in Sources */,
+				312FB33D269BC878000486ED /* UserPlan.swift in Sources */,
 				3113DEB0261DD2B800C0CD4D /* HelperFunctions.swift in Sources */,
-				31F654A925E2D8CE009F9AC8 /* ProfileVC.swift in Sources */,
 				31F654AF25ED7D71009F9AC8 /* HotelVC.swift in Sources */,
 				318D8DA325DB256A00015F7E /* ChooseProFavCVCell.swift in Sources */,
+				31D8B11726580C3800A476FE /* CustomInterceptor.swift in Sources */,
+				31E52620269850FC006E549C /* AllPlansCVCell.swift in Sources */,
 				318D8D7825D99EFF00015F7E /* NotificationsVC.swift in Sources */,
 				318D8D7425D8865600015F7E /* AddNewProgramVC.swift in Sources */,
 				310DCE71262E17730045806B /* GetPlaceDetails.swift in Sources */,
 				3172FDEF260DFE4100A99314 /* ActivityVC.swift in Sources */,
 				31D8B0BD263C1EFD00A476FE /* GetHotelsModel.swift in Sources */,
 				31C8505825D2DFC800449D86 /* CityAdvenCVCell.swift in Sources */,
+				31C67F46269B667C00822C7E /* ConfirmDeclinePlanVC.swift in Sources */,
+				31F56085269CA36E00291DA7 /* UserHotelCVCell.swift in Sources */,
+				31EFF278269CE35900193BD9 /* PlanRoomVC.swift in Sources */,
 				31C6F06E260F4D5A0096468B /* City_ProgramCVCell.swift in Sources */,
+				31EFF276269CADAA00193BD9 /* PlanDetailsVC.swift in Sources */,
 				31C8505E25D31A2100449D86 /* CityPlacesCVCell.swift in Sources */,
+				31A5C1CE266D6CAB00CD8F4A /* GetNotification.swift in Sources */,
 				3113DEB22621C01700C0CD4D /* GetPlaceModel.swift in Sources */,
+				315029D82661668E004B3C7E /* GetFavorites.swift in Sources */,
+				3189CBF62687A69300304B7A /* FeaturesCVCell.swift in Sources */,
+				315029D6265E9F66004B3C7E /* ProfileVC.swift in Sources */,
 				31F654B125ED82DB009F9AC8 /* RoomCVCell.swift in Sources */,
+				31E5261E26985006006E549C /* AllPlansVC.swift in Sources */,
 				31C8505C25D3172C00449D86 /* CityVC.swift in Sources */,
-				31F654AB25E3009F009F9AC8 /* EditProfileVC.swift in Sources */,
+				31F654AB25E3009F009F9AC8 /* EditProfVC.swift in Sources */,
+				31D8B11526580C0100A476FE /* APIHandler.swift in Sources */,
 				31D8B0BB263AE00100A476FE /* GetHotelDetails.swift in Sources */,
+				31D8B11B265E3F7300A476FE /* Extenstions.swift in Sources */,
 				31EB124125D1379B00D37148 /* HomeVC.swift in Sources */,
+				3197B35F26974FF700DD317D /* getPlansModel.swift in Sources */,
 				3113DEB826273CB800C0CD4D /* ReviewVC.swift in Sources */,
 				3113DEAE2619EDCF00C0CD4D /* GetCitiesModel.swift in Sources */,
 				31D83ED325D4959500C170FB /* PlaceDetailsVC.swift in Sources */,
@@ -420,10 +496,14 @@
 				3172FDF3260E16AB00A99314 /* MainRoomCVCell.swift in Sources */,
 				31740A1525C538DE0082B329 /* LogInVC.swift in Sources */,
 				31740A1125C538DE0082B329 /* AppDelegate.swift in Sources */,
+				31F56087269CA3AF00291DA7 /* UserPlanHotelVC.swift in Sources */,
+				312FB341269BCB56000486ED /* RoomPlanCVCell.swift in Sources */,
 				31740A1325C538DE0082B329 /* SceneDelegate.swift in Sources */,
 				31EE839825D6E9DB0010D3AD /* PlanesVC.swift in Sources */,
 				31C8505A25D2E36E00449D86 /* Constants.swift in Sources */,
+				3189CBF82688B55000304B7A /* DroppablePin.swift in Sources */,
 				31EE839A25D6EACE0010D3AD /* PlansCVCell.swift in Sources */,
+				319111FC2699726F00C9871C /* TourCVCell.swift in Sources */,
 				3172FDF1260E132200A99314 /* RoomVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

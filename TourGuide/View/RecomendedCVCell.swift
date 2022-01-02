@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class RecomendedCVCell: UICollectionViewCell {
     
@@ -15,11 +16,18 @@ class RecomendedCVCell: UICollectionViewCell {
             cellView.layer.cornerRadius = 10
         }
     }
+    
     @IBOutlet weak var recomndedImageView: UIImageView! {
         didSet {
             recomndedImageView.layer.cornerRadius = 10
         }
     }
-    @IBOutlet weak var likeBtnOutlet: UIButton!
+    
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cosmosView: CosmosView! {
+        didSet {
+            cosmosView.settings.updateOnTouch = false
+            cosmosView.settings.fillMode = .precise
+        }
+    }
 }

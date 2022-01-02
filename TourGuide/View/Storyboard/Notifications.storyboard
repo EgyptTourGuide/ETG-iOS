@@ -76,23 +76,25 @@
                                                                 <constraint firstAttribute="height" constant="30" id="YZI-jH-5kD"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-SJ-jL0">
-                                                            <rect key="frame" x="70" y="31.5" width="274" height="45"/>
-                                                            <string key="text">" Hotel Luxor " dear This place has a technical malfunction and therefore it was replaced by
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-lQ-p6L">
+                                                            <rect key="frame" x="70" y="20" width="334" height="76"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-Nd-Wbd">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="17.5"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-SJ-jL0">
+                                                                    <rect key="frame" x="0.0" y="27.5" width="334" height="48.5"/>
+                                                                    <string key="text">" Hotel Luxor " dear This place has a technical malfunction and therefore it was replaced by
 another place "Pavillon Winter Luxor Hotel". </string>
-                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-G3-AQm">
-                                                            <rect key="frame" x="364" y="47" width="30" height="14"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="bWZ-6T-MFu"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ip-aq-xRB">
                                                             <rect key="frame" x="70" y="107" width="274" height="1"/>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,17 +105,14 @@ another place "Pavillon Winter Luxor Hotel". </string>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstItem="yGt-G3-AQm" firstAttribute="centerY" secondItem="keS-6R-wUc" secondAttribute="centerY" id="8BI-DB-5Gi"/>
-                                                        <constraint firstItem="AR0-SJ-jL0" firstAttribute="centerY" secondItem="keS-6R-wUc" secondAttribute="centerY" id="Dyj-4t-9Kb"/>
-                                                        <constraint firstItem="AR0-SJ-jL0" firstAttribute="leading" secondItem="xRm-hA-umb" secondAttribute="trailing" constant="20" id="JFM-Rz-zfn"/>
-                                                        <constraint firstItem="yGt-G3-AQm" firstAttribute="leading" secondItem="AR0-SJ-jL0" secondAttribute="trailing" constant="20" id="bwW-5h-czh"/>
+                                                        <constraint firstItem="Q2n-lQ-p6L" firstAttribute="leading" secondItem="xRm-hA-umb" secondAttribute="trailing" constant="20" id="80f-h1-zQ8"/>
+                                                        <constraint firstItem="6ip-aq-xRB" firstAttribute="leading" secondItem="keS-6R-wUc" secondAttribute="leading" constant="70" id="M0V-bM-Pdb"/>
                                                         <constraint firstItem="xRm-hA-umb" firstAttribute="centerY" secondItem="keS-6R-wUc" secondAttribute="centerY" id="dBU-K5-2pg"/>
-                                                        <constraint firstItem="6ip-aq-xRB" firstAttribute="leading" secondItem="AR0-SJ-jL0" secondAttribute="leading" id="hws-Jp-fl4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="yGt-G3-AQm" secondAttribute="trailing" constant="20" id="j20-hj-ppA"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6ip-aq-xRB" secondAttribute="bottom" id="k5g-qE-NwQ"/>
-                                                        <constraint firstItem="6ip-aq-xRB" firstAttribute="trailing" secondItem="AR0-SJ-jL0" secondAttribute="trailing" id="sDY-aU-hXb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Q2n-lQ-p6L" secondAttribute="trailing" constant="10" id="lM1-rW-rwm"/>
+                                                        <constraint firstItem="6ip-aq-xRB" firstAttribute="bottom" secondItem="keS-6R-wUc" secondAttribute="bottom" id="qaN-EQ-WgN"/>
                                                         <constraint firstItem="xRm-hA-umb" firstAttribute="centerY" secondItem="keS-6R-wUc" secondAttribute="centerY" id="v6w-ib-KeN"/>
-                                                        <constraint firstItem="yGt-G3-AQm" firstAttribute="leading" secondItem="AR0-SJ-jL0" secondAttribute="trailing" constant="20" id="wpT-Ya-ku5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6ip-aq-xRB" secondAttribute="trailing" constant="70" id="x41-0b-tge"/>
+                                                        <constraint firstItem="Q2n-lQ-p6L" firstAttribute="top" secondItem="keS-6R-wUc" secondAttribute="top" constant="20" id="xcy-Cc-TTm"/>
                                                         <constraint firstItem="xRm-hA-umb" firstAttribute="leading" secondItem="keS-6R-wUc" secondAttribute="leading" constant="20" id="ylL-OL-Bhq"/>
                                                     </constraints>
                                                 </view>
@@ -127,7 +126,7 @@ another place "Pavillon Winter Luxor Hotel". </string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="notificationsTimeLabel" destination="yGt-G3-AQm" id="oWB-Gl-SPy"/>
+                                            <outlet property="notifTitleLabel" destination="NYB-Nd-Wbd" id="ACQ-pp-ZhY"/>
                                             <outlet property="notificationstaxtLabel" destination="AR0-SJ-jL0" id="Y6y-M5-wBl"/>
                                             <outlet property="notificatiosImageView" destination="xRm-hA-umb" id="LMP-0A-kTZ"/>
                                         </connections>

@@ -67,6 +67,10 @@ class ReviewVC: UIViewController {
     var answers = [Bool]()
     var rate = 0.0
     var placeId = ""
+    var comment = ""
+    var hotelId = ""
+    var planId = ""
+    var id = ""
     
     //MARK: -View Functions
     override func viewDidLoad() {
@@ -80,7 +84,7 @@ class ReviewVC: UIViewController {
     //MARK: -IBActions
     @IBAction func yesOrNoBtnPressed(_ sender: UIButton) {
         
-        var num = sender.tag
+        let num = sender.tag
         
         switch num {
         case 1...2:
@@ -133,16 +137,156 @@ class ReviewVC: UIViewController {
         default:
             return
         }
-        print(answers)
+        //print(answers)
     }
     
     @IBAction func submitReviewBtnPressed(_ sender: UIButton) {
-        post_review()
+        
+        
+        if id == placeId {
+            post_review()
+        } else if id == hotelId {
+            post_reviewHotel()
+        } else if id == planId {
+            post_reviewPlan()
+        }
+        
     }
     
     
-    //MARK: -Helper Functions
+    //MARK: -API Calls
     
+    func post_reviewHotel() {
+            
+            startLoading()
+            
+            guard let url = URL(string: "\(offlineURL)/hotels/\(hotelId)/review") else {return}
+            
+            print(url)
+            let header = Constants().defaultHeader
+            let APIToken = UserDefaults.standard.string(forKey: "APIToken") ?? "There is no token"
+    //        print("getFavToken: \(APIToken)")
+            let authorization = Constants().authHeader(authToken: APIToken)
+    //        print(header, authorization)
+            let alamoHeader = APIHandler.checkHeaders(headers: header, authorization: authorization)
+            print(alamoHeader!)
+                    //print(answers, rate, commentTF.text ?? "")
+            
+            ckeckCommentTF()
+            
+            let params : [String : Any] = ["answers": answers,
+                                           "rate": rate,
+                                           "comment": comment]
+           
+            print(answers, rate, commentTF.text as Any)
+            AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: alamoHeader, interceptor: CustomInterceptor())
+                .validate(statusCode: 200...300)
+                .responseJSON { (response) in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    switch response.result {
+                        
+                    case .success(_):
+                        print("Success")
+                        print(response.value ?? "")
+                        if response.response?.statusCode == 201 {
+                            self.showAlert(message: "Created")
+                        }
+                    case .failure(_):
+                        print(response.error?.localizedDescription ?? "Error ")
+                        print(response.debugDescription)
+                        //self.showAlert(message: "You should answer the 4 qustions, your rate, and write a comment")
+                }
+            }
+        }
+        
+    func post_review() {
+        
+        startLoading()
+        
+        guard let url = URL(string: "\(offlineURL)/places/\(placeId)/review") else {return}
+        
+        print(url)
+        let header = Constants().defaultHeader
+        let APIToken = UserDefaults.standard.string(forKey: "APIToken") ?? "There is no token"
+//        print("getFavToken: \(APIToken)")
+        let authorization = Constants().authHeader(authToken: APIToken)
+//        print(header, authorization)
+        let alamoHeader = APIHandler.checkHeaders(headers: header, authorization: authorization)
+        print(alamoHeader!)
+                //print(answers, rate, commentTF.text ?? "")
+        
+        ckeckCommentTF()
+        
+        let params : [String : Any] = ["answers": answers,
+                                       "rate": rate,
+                                       "comment": comment]
+       
+        print(answers, rate, commentTF.text as Any)
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: alamoHeader, interceptor: CustomInterceptor())
+            .validate(statusCode: 200...300)
+            .responseJSON { (response) in
+                
+                self.dismiss(animated: true, completion: nil)
+                switch response.result {
+                    
+                case .success(_):
+                    print("Success")
+                    print(response.value ?? "")
+                    if response.response?.statusCode == 201 {
+                        self.showAlert(message: "Created")
+                    }
+                case .failure(_):
+                    print(response.error?.localizedDescription ?? "Error ")
+                    print(response.debugDescription)
+                    //self.showAlert(message: "You should answer the 4 qustions, your rate, and write a comment")
+            }
+        }
+    }
+    
+    func post_reviewPlan() {
+            
+            startLoading()
+            
+            guard let url = URL(string: "\(offlineURL)/plans/\(planId)/review") else {return}
+            
+            print(url)
+            let header = Constants().defaultHeader
+            let APIToken = UserDefaults.standard.string(forKey: "APIToken") ?? "There is no token"
+    //        print("getFavToken: \(APIToken)")
+            let authorization = Constants().authHeader(authToken: APIToken)
+    //        print(header, authorization)
+            let alamoHeader = APIHandler.checkHeaders(headers: header, authorization: authorization)
+            print(alamoHeader!)
+                    //print(answers, rate, commentTF.text ?? "")
+            
+            ckeckCommentTF()
+            
+            let params : [String : Any] = ["answers": answers,
+                                           "rate": rate,
+                                           "comment": comment]
+           
+            print(answers, rate, commentTF.text as Any)
+            AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: alamoHeader, interceptor: CustomInterceptor())
+                .validate(statusCode: 200...300)
+                .responseJSON { (response) in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    switch response.result {
+                        
+                    case .success(_):
+                        print("Success")
+                        print(response.value ?? "")
+                        self.showAlert(message: "Created")
+
+                    case .failure(_):
+                        print(response.error?.localizedDescription ?? "Error ")
+                        print(response.debugDescription)
+                        self.showAlert(message: "You should answer the 4 qustions, your rate, and write a comment")
+                }
+            }
+        }
+    //MARK: -Helper Functions
     func setUpNavBar(){
         //For title in navigation bar
         self.navigationController?.view.backgroundColor = UIColor.white
@@ -159,7 +303,7 @@ class ReviewVC: UIViewController {
     func getCosmos() {
         
         cosmosView.didTouchCosmos = { rating in
-            print("rate: \(rating) ")
+            //print("rate: \(rating) ")
             self.rate = rating
         }
         
@@ -167,31 +311,36 @@ class ReviewVC: UIViewController {
         
     }
     
-    func post_review() {
-        
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/places/\(placeId)/review") else {return}
-        
-        let header = ["Content-Type":"application/json; charset=utf-8"]
-        let AlamoHeader = HTTPHeaders(header)
-        
-        print(answers, rate, commentTF.text ?? "")
-        let params : [String : Any] = ["answers": answers,
-                                       "rate": rate,
-                                       "comment": commentTF.text ?? ""]
-        
-        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: AlamoHeader).responseJSON { (response) in
-            
-            switch response.result {
-                
-            case .success(_):
-                print("Success")
-                print(response.value ?? "")
-                
-            case .failure(_):
-                print(response.error?.localizedDescription ?? "Error ")
-            }
+    func ckeckCommentTF() {
+        if !commentTF.text!.isEmpty {
+            self.comment = commentTF.text!
+        } else {
+            self.showAlert(message: "You should write a comment")
         }
     }
+    
+    func showAlert(message: String) {
+        
+        let alert = UIAlertController(title: "Alert", message: message , preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
+
+    func startLoading() {
+        
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        alert.view.tintColor = UIColor.black
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 

@@ -24,6 +24,7 @@ class ChooseProFavCVCell: UICollectionViewCell {
                 cellLabel.textColor = #colorLiteral(red: 0.003591888817, green: 0.6864221096, blue: 0.5671058297, alpha: 1)
                 underLineView.isHidden = false
                 underLineView.backgroundColor = #colorLiteral(red: 0.003591888817, green: 0.6864221096, blue: 0.5671058297, alpha: 1)
+                
             } else {
                 cellLabel.textColor = .white
                 underLineView.isHidden = true

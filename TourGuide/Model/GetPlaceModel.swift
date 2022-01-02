@@ -14,13 +14,16 @@ class GetPlace {
     let name: String?
     let media: [String]?
     let description: String?
-    
+    let rate: Double?
+
     init(places: Dictionary<String,Any>) {
         
         self.id = places["id"] as? String
         self.name = places["name"] as? String
         self.media = places["media"] as? [String]
         self.description = places["description"] as? String
+        self.rate = places["rate"] as? Double
+
     }
     
 }

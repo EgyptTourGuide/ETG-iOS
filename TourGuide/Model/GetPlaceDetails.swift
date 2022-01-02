@@ -18,7 +18,9 @@ class GetPlaceDetails {
     let rate: Double?
     let hours: [Dictionary<String,Any>]
     let reviews: [Dictionary<String,Any>]
-    
+    let location: Dictionary<String,Any>
+    let ticket: Dictionary<String,Any>
+
     init(place: Dictionary<String,Any>) {
         
         self.id = place["id"] as? String
@@ -29,6 +31,8 @@ class GetPlaceDetails {
         self.rate = place["rate"] as? Double
         self.hours = (place["hours"] as? [Dictionary<String,Any>])!
         self.reviews = (place["reviews"] as? [Dictionary<String,Any>])!
+        self.location = (place["location"] as? Dictionary<String,Any>)!
+        self.ticket = (place["ticket"] as? Dictionary<String,Any>)!
 
     }
     

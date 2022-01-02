@@ -15,6 +15,7 @@ class GetRooms {
     let media: [String]?
     let price: Double?
     let food: String?
+    let number: String?
 
     
     init(rooms: Dictionary<String,Any>) {
@@ -24,6 +25,7 @@ class GetRooms {
         self.media = rooms["media"] as? [String]
         self.price = rooms["price"] as? Double
         self.food = rooms["food"] as? String
+        self.number = rooms["number"] as? String
 
     }
     

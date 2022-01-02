@@ -18,6 +18,8 @@ class GetHotelDetails {
     let rooms: [Dictionary<String,Any>]
     let reviews: [Dictionary<String,Any>]
     let questions: [String]?
+    let features: [String]?
+    let location: Dictionary<String,Any>
 
     init(hotel: Dictionary<String,Any>) {
         
@@ -29,6 +31,8 @@ class GetHotelDetails {
         self.rooms = (hotel["rooms"] as? [Dictionary<String,Any>])!
         self.reviews = (hotel["reviews"] as? [Dictionary<String,Any>])!
         self.questions = hotel["questions"] as? [String]
+        self.features = hotel["features"] as? [String]
+        self.location = (hotel["location"] as? Dictionary<String,Any>)!
 
     }
     

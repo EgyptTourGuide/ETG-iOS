@@ -58,9 +58,13 @@ class LogInVC: UIViewController {
     }
     }
     
+    //MARK: -Variables
+    var token = ""
+    var refreshToken = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
     
@@ -75,13 +79,13 @@ class LogInVC: UIViewController {
     
     @IBAction func logInBtnPressed(_ sender: UIButton) {
         
-        if userNameTF.text == "" {
+        if userNameTF.text!.isEmpty {
             //print("Please enter your email")
-            showAlert(message: "Please enter your email")
+            showAlert(message: "Please enter your user name")
             
             return
         }
-        if passwordTF.text == "" {
+        if passwordTF.text!.isEmpty {
             //passwordTF.placeholder =
             showAlert(message: "Please enter your password.")
             return
@@ -97,13 +101,13 @@ class LogInVC: UIViewController {
         present(mainTabBarController, animated: true, completion: nil)
     }
     
-    //MARK: -Helper functions
+    //MARK: -API Calls
 
     func post_signin() {
         
         startLoading()
         
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/login") else {return}
+        guard let url = URL(string: "\(offlineURL)/login") else {return}
         
         let header = ["Content-Type":"application/json; charset=utf-8"]
         let AlamoHeader = HTTPHeaders(header)
@@ -121,15 +125,26 @@ class LogInVC: UIViewController {
             case .success(_):
                 
                 let responseJSON = JSON(response.value as Any)
-                print(responseJSON)
+                //print(responseJSON)
 
                 if responseJSON["id"].intValue != 0 {
                     
-                    print(responseJSON["token"].stringValue)
-                    let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
+                    //print(responseJSON["token"].stringValue)
+                    self.token = responseJSON["token"].stringValue
+                    //print("SignIn \(self.APIToken)")
+                    
+                    self.refreshToken = responseJSON["refreshToken"].stringValue
+                    //print("SignIn \(self.refreshToken)")
+                    
+                    UserDefaults.standard.set(self.token, forKey: "APIToken")
+                    UserDefaults.standard.set(self.refreshToken, forKey: "refreshToken")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
 
-                    mainTabBarController.modalPresentationStyle = .fullScreen
-                    self.present(mainTabBarController, animated: true, completion: nil)
+                        mainTabBarController.modalPresentationStyle = .fullScreen
+                        self.present(mainTabBarController, animated: true, completion: nil)
+                    }
+                    
                 }
                 
                 
@@ -141,14 +156,14 @@ class LogInVC: UIViewController {
         }
     }
     
-    
     func showAlert(message: String) {
+        
         let alert = UIAlertController(title: "Alert", message: message , preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
-    
-    
+
+
     func startLoading() {
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
@@ -161,5 +176,7 @@ class LogInVC: UIViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
     }
+
+    
 }
 

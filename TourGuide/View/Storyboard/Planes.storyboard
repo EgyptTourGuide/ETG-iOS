@@ -60,49 +60,36 @@
                                 <rect key="frame" x="0.0" y="213" width="414" height="600"/>
                                 <color key="backgroundColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="SGl-ww-24h">
-                                    <size key="itemSize" width="374" height="166"/>
+                                    <size key="itemSize" width="374" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlansCVCell" id="xPt-NR-lJO" customClass="PlansCVCell" customModule="TourGuide" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="10" width="374" height="166"/>
+                                        <rect key="frame" x="20" y="10" width="374" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kuB-gA-7Wt">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="166"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESk-ec-rYe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="156"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luxor" translatesAutoresizingMaskIntoConstraints="NO" id="4IK-xF-OLq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="156"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luxor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G06-4A-z3m">
-                                                            <rect key="frame" x="15" y="116" width="50.5" height="30"/>
+                                                            <rect key="frame" x="15" y="97" width="50.5" height="23"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-DL-Rfk">
-                                                            <rect key="frame" x="304" y="116" width="50" height="30"/>
-                                                            <color key="backgroundColor" red="0.30634343619999999" green="0.67603808639999996" blue="0.57254004479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="9gG-q5-Ovg"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Go">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.078979261219999999" green="0.085510872299999999" blue="0.121573247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="4IK-xF-OLq" firstAttribute="top" secondItem="ESk-ec-rYe" secondAttribute="top" id="0HF-Gr-Mne"/>
-                                                        <constraint firstAttribute="trailing" secondItem="HtC-DL-Rfk" secondAttribute="trailing" constant="20" id="3Na-Rb-uH6"/>
-                                                        <constraint firstItem="HtC-DL-Rfk" firstAttribute="top" secondItem="G06-4A-z3m" secondAttribute="top" id="GQk-Gn-dYm"/>
                                                         <constraint firstAttribute="trailing" secondItem="4IK-xF-OLq" secondAttribute="trailing" id="OHY-xT-sOQ"/>
-                                                        <constraint firstItem="HtC-DL-Rfk" firstAttribute="bottom" secondItem="G06-4A-z3m" secondAttribute="bottom" id="RMe-fb-xvG"/>
                                                         <constraint firstItem="G06-4A-z3m" firstAttribute="leading" secondItem="4IK-xF-OLq" secondAttribute="leading" constant="15" id="Ta9-0S-9mB"/>
                                                         <constraint firstItem="4IK-xF-OLq" firstAttribute="height" secondItem="ESk-ec-rYe" secondAttribute="height" id="gBW-w3-82E"/>
                                                         <constraint firstAttribute="bottom" secondItem="4IK-xF-OLq" secondAttribute="bottom" id="gCh-Em-ELd"/>
@@ -118,10 +105,9 @@
                                                 <constraint firstItem="ESk-ec-rYe" firstAttribute="leading" secondItem="kuB-gA-7Wt" secondAttribute="leading" id="v91-mT-adZ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="374" height="166"/>
+                                        <size key="customSize" width="374" height="140"/>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="G06-4A-z3m" id="akG-Jz-8pr"/>
-                                            <outlet property="goBtnOutlet" destination="HtC-DL-Rfk" id="q2L-1b-IA2"/>
                                             <outlet property="plansImageView" destination="4IK-xF-OLq" id="g8Q-ff-lIc"/>
                                             <outlet property="planscellView" destination="ESk-ec-rYe" id="5cX-aC-04c"/>
                                         </connections>

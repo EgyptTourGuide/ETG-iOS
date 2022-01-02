@@ -100,12 +100,21 @@ class CityVC: UIViewController {
     let labelsArray = ["Places", "Hotels","Delights"]
     var cityId = ""
     var getPlaceArr = [GetPlace]()
+    var getActivityArr = [GetActivity]()
     var placeImagesArr = [String]()
     var getHotelIdArr = [String]()
     var getHotelNamesArr = [String]()
     var hotelImagesArr = [String]()
     var selectedPlaceId = ""
     var selsectedHotelId = ""
+    var selsectedActivityId = ""
+    var selectedActivityName = ""
+    var getActiviyIdArr = [String]()
+    var getActiviyNamesArr = [String]()
+    var ActiviyImagesArr = [String]()
+    var bed: Int?
+    var features = [String]()
+//    var datePicker: UIDatePicker?
     
     //MARK: -View functions
     override func viewDidLoad() {
@@ -115,6 +124,9 @@ class CityVC: UIViewController {
         setUpNavBar()
         get_places()
         get_hotels()
+        get_activities()
+//        setUpFromDatePicker()
+//        setUpToDatePicker()
     }
     
     //MARK: -IBActions
@@ -129,23 +141,37 @@ class CityVC: UIViewController {
         hotelDetailsView.isHidden = true
     }
     
-    //MARK: -Helper functions
+//    @objc func fromTFdatePicked(datePicker: UIDatePicker) {
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        fromTF.text = dateFormatter.string(from: datePicker.date)
+//        //view.endEditing(true)
+//    }
+//
+//    @objc func toTFdatePicked(datePicker: UIDatePicker) {
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        toTF.text = dateFormatter.string(from: datePicker.date)
+//        //view.endEditing(true)
+//    }
+//
+//    @objc func endPicking(tapGestureRecognizer: UITapGestureRecognizer) {
+//
+//        view.endEditing(true)
+//    }
     
-    func setUpNavBar(){
-        //For title in navigation bar
-        self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.view.tintColor = UIColor.white
-        self.navigationItem.title = "City"
-
-        //For back button in navigation bar
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    @IBAction func filterBtnPressed(_ sender: UIButton) {
+        
+        //get_filteredhotels()
     }
+    
+    //MARK: - API Calls
     
     func get_places() {
         
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/places?city=\(cityId)") else {return}
+        guard let url = URL(string: "\(offlineURL)/places?city=\(cityId)") else {return}
         
         //print(url)
         let header = ["Content-Type":"application/json; charset=utf-8"]
@@ -177,10 +203,49 @@ class CityVC: UIViewController {
             }
         }
     }
+    
+//    func get_filteredhotels() {
+//        
+//        get_filteredhotels()
+//        guard let url = URL(string: "\(onlineURL)/hotels?city=\(cityId)&from=\(String(describing: fromTF.text))&to=\(String(describing: toTF.text))") else {return}
+//        
+//        //print(url)
+//        let header = ["Content-Type":"application/json; charset=utf-8"]
+//        let alamoHeader = HTTPHeaders(header)
+//        
+//        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+//            
+//            switch response.result {
+//                
+//            case .success(_):
+//                
+//                let repValue = response.value as! [AnyObject]
+//                
+//                for hotel in repValue {
+//                    
+//                    let getHotel = GetHotels(hotels: hotel as! Dictionary<String, Any>)
+//                    self.getHotelIdArr.append(getHotel.id!)
+//                    self.getHotelNamesArr.append(getHotel.name!)
+//                    //                    print("Ids: \(self.getHotelIdArr)")
+//                    //                    print("Names: \(self.getHotelNamesArr)")
+//                    self.hotelImagesArr.append(getHotel.media![0])
+//                    //print(self.hotelImagesArr)
+//                    //print(self.placeImagesArr)
+//                }
+//                
+//                self.citiesHDCollectionView.reloadData()
+//                
+//            case .failure(_):
+//                
+//                print(response.error?.localizedDescription ?? "Eroor: Failure")
+//                print(response.debugDescription)
+//            }
+//        }
+//    }
 
     func get_hotels() {
         
-        guard let url = URL(string: "https://egypttourguide.herokuapp.com/hotels?city=\(cityId)") else {return}
+        guard let url = URL(string: "\(offlineURL)/hotels?city=\(cityId)") else {return}
         
         //print(url)
         let header = ["Content-Type":"application/json; charset=utf-8"]
@@ -211,8 +276,92 @@ class CityVC: UIViewController {
             case .failure(_):
                 
                 print(response.error?.localizedDescription ?? "Eroor: Failure")
+                print(response.debugDescription)
             }
         }
+    }
+    
+    func get_activities() {
+        
+        guard let url = URL(string: "\(offlineURL)/activity?city=\(cityId)") else {return}
+        
+        let header = ["Content-Type":"application/json; charset=utf-8"]
+        let alamoHeader = HTTPHeaders(header)
+        print("Activities \(alamoHeader)")
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: alamoHeader).responseJSON { (response) in
+            
+            switch response.result {
+                
+            case .success(_):
+                
+                let repValue = response.value as? Dictionary<String,AnyObject>
+                let activities = repValue!["activities"] as? [Dictionary<String,AnyObject>]
+                //print(repValue)
+                
+                for activity in activities! {
+                    
+                    let getActivity = GetActivity(activity: activity)
+                    self.getActivityArr.append(getActivity)
+                    self.ActiviyImagesArr.append(getActivity.media![0])
+                    
+                }
+                                
+                self.citiesHDCollectionView.reloadData()
+                
+            case .failure(_):
+                
+                print(response.error?.localizedDescription ?? "Error")
+            }
+        }
+    }
+    
+    //MARK: -Helper functions
+    func setUpNavBar(){
+        //For title in navigation bar
+        self.navigationController?.view.backgroundColor = UIColor.white
+        self.navigationController?.view.tintColor = UIColor.white
+        self.navigationItem.title = "City"
+
+        //For back button in navigation bar
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+//    func setUpFromDatePicker() {
+//
+//        datePicker = UIDatePicker()
+//        datePicker?.datePickerMode = .date
+//        datePicker?.addTarget(self, action: #selector(fromTFdatePicked(datePicker:)), for: .valueChanged)
+//
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endPicking(tapGestureRecognizer:)))
+//
+//        view.addGestureRecognizer(tapGesture)
+//        fromTF.inputView = datePicker
+//    }
+    
+//    func setUpToDatePicker() {
+//
+//        datePicker = UIDatePicker()
+//        datePicker?.datePickerMode = .date
+//        datePicker?.addTarget(self, action: #selector(toTFdatePicked(datePicker:)), for: .valueChanged)
+//
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endPicking(tapGestureRecognizer:)))
+//
+//        view.addGestureRecognizer(tapGesture)
+//        toTF.inputView = datePicker
+//    }
+    
+    func geFilterData() {
+        
+        if !bedTF.text!.isEmpty {
+            bed = Int(bedTF.text!)
+        }
+        
+        if !featuresTF.text!.isEmpty {
+            features.append(featuresTF.text!)
+        }
+        
     }
     
 }
@@ -246,6 +395,11 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 
                 cell.placeHDNameLabel.text = getHotelNamesArr[indexPath.row]
                 cell.placHDImageView.image = getImage(from: hotelImagesArr[indexPath.row])
+                
+            } else if PlaHoDelImagesArray == ActiviyImagesArr {
+                
+                cell.placeHDNameLabel.text = getActivityArr[indexPath.row].name
+                cell.placHDImageView.image = getImage(from: ActiviyImagesArr[indexPath.row])
             }
             
             return cell
@@ -265,12 +419,13 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == citiesHDCollectionView  {
             
             if PlaHoDelImagesArray == placeImagesArr {
+                
                 let placeDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "PlaceDetailsVC") as! PlaceDetailsVC
                 
                 if let placeId = getPlaceArr[indexPath.row].id {
                     
                     self.selectedPlaceId = placeId
-                    print("selected \(selectedPlaceId)")
+                    //print("selected \(selectedPlaceId)")
                 }
                 
                 //print(selectedPlaceId)
@@ -283,9 +438,28 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 
                 self.selsectedHotelId = getHotelIdArr[indexPath.row] 
                 
-                print(selsectedHotelId)
+                //print(selsectedHotelId)
                 hotelVC.hotelId = selsectedHotelId
                 self.navigationController?.pushViewController(hotelVC, animated: true)
+                
+            } else if PlaHoDelImagesArray == ActiviyImagesArr {
+                
+                let activityVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ActivityVC") as! ActivityVC
+                
+                if let activityId = getActivityArr[indexPath.row].id {
+                    
+                    self.selsectedActivityId = activityId
+                    //print("selected \(selsectedActivityId)")
+                }
+                if let activtyName = getActivityArr[indexPath.row].name {
+                    
+                    self.selectedActivityName = activtyName
+                    //print("selected \(selectedActivityName)")
+                }
+                
+                activityVC.activityId = selsectedActivityId
+                activityVC.activityName = selectedActivityName
+                self.navigationController?.pushViewController(activityVC, animated: true)
             }
         }
         
@@ -300,6 +474,11 @@ extension CityVC: UICollectionViewDelegate, UICollectionViewDataSource {
             } else if indexPath.row == 1 {
                 
                 PlaHoDelImagesArray = hotelImagesArr
+                citiesHDCollectionView.reloadData()
+                
+            } else if indexPath.row == 2 {
+                
+                PlaHoDelImagesArray = ActiviyImagesArr
                 citiesHDCollectionView.reloadData()
             }
         }

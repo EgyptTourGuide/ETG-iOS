@@ -16,7 +16,8 @@ class NotificationsTVCell: UITableViewCell {
         }
     }
     @IBOutlet weak var notificationstaxtLabel: UILabel!
-    @IBOutlet weak var notificationsTimeLabel: UILabel!
+    @IBOutlet weak var notifTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
